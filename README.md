@@ -7,4 +7,4 @@
 ## report
 - you can see report of C synthesis at [csynth.rpt](/solution1/syn/report/csynth.rpt)
     - it says that this algorithm needs 1212 cycles for sorting (with array size N = 1000, and k = 100), which means that time complexity is O(N), while usual sorting algorithms requires time complexity O(NlogN).
-- it can be confirmed that LOOPS are correctly pipelined
+- you can check timing summary at [topk_sort_csynth.rpt](/solution1/syn/report/topk_sort_csynth.rpt)
