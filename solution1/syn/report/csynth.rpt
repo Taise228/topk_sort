@@ -1,0 +1,146 @@
+
+
+================================================================
+== Synthesis Summary Report of 'topk_sort'
+================================================================
++ General Information: 
+    * Date:           Sun Jul 21 01:25:31 2024
+    * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
+    * Project:        topk_sort
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: zynquplus
+    * Target device:  xck26-sfvc784-2LV-c
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +----------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----+------------+-------------+-----+
+    |                 Modules                | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |      |    |            |             |     |
+    |                 & Loops                | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined| BRAM | DSP|     FF     |     LUT     | URAM|
+    +----------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----+------------+-------------+-----+
+    |+ topk_sort                             |     -|  4.70|   115406|  1.154e+06|         -|   115407|     -|        no|     -|   -|  13040 (5%)|  11733 (10%)|    -|
+    | + topk_sort_Pipeline_VITIS_LOOP_20_1   |     -|  6.06|      102|  1.020e+03|         -|      102|     -|        no|     -|   -|     9 (~0%)|     51 (~0%)|    -|
+    |  o VITIS_LOOP_20_1                     |     -|  7.30|      100|  1.000e+03|         1|        1|   100|       yes|     -|   -|           -|            -|    -|
+    | + topk_sort_Pipeline_VITIS_LOOP_70_6   |     -|  6.06|      102|  1.020e+03|         -|      102|     -|        no|     -|   -|    43 (~0%)|    582 (~0%)|    -|
+    |  o VITIS_LOOP_70_6                     |     -|  7.30|      100|  1.000e+03|         2|        1|   100|       yes|     -|   -|           -|            -|    -|
+    | o VITIS_LOOP_30_2                      |     -|  7.30|   105000|  1.050e+06|       105|        -|  1000|        no|     -|   -|           -|            -|    -|
+    |  + topk_sort_Pipeline_VITIS_LOOP_36_3  |     -|  4.70|      102|  1.020e+03|         -|      102|     -|        no|     -|   -|     9 (~0%)|    3656 (3%)|    -|
+    |   o VITIS_LOOP_36_3                    |     -|  7.30|      100|  1.000e+03|         1|        1|   100|       yes|     -|   -|           -|            -|    -|
+    | o VITIS_LOOP_57_4                      |     -|  7.30|    10197|  1.020e+05|       103|        -|    99|        no|     -|   -|           -|            -|    -|
+    |  + topk_sort_Pipeline_VITIS_LOOP_58_5  |     -|  4.70|      101|  1.010e+03|         -|      101|     -|        no|     -|   -|    67 (~0%)|    3646 (3%)|    -|
+    |   o VITIS_LOOP_58_5                    |     -|  7.30|       99|    990.000|         1|        1|    99|       yes|     -|   -|           -|            -|    -|
+    +----------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----+------------+-------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* S_AXILITE Interfaces
++-------------------+------------+---------------+
+| Interface         | Data Width | Address Width |
++-------------------+------------+---------------+
+| s_axi_CONTROL_BUS | 32         | 4             |
++-------------------+------------+---------------+
+
+* S_AXILITE Registers
++-------------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface         | Register | Offset | Width | Access | Description                      | Bit Fields                                                           |
++-------------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_CONTROL_BUS | CTRL     | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_CONTROL_BUS | GIER     | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_CONTROL_BUS | IP_IER   | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_CONTROL_BUS | IP_ISR   | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
++-------------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* AXIS
++-----------+---------------+-------+-------+-------+--------+-------+--------+
+| Interface | Register Mode | TDATA | TKEEP | TLAST | TREADY | TSTRB | TVALID |
++-----------+---------------+-------+-------+-------+--------+-------+--------+
+| istrm     | both          | 32    | 4     | 1     | 1      | 4     | 1      |
+| ostrm     | both          | 32    | 4     | 1     | 1      | 4     | 1      |
++-----------+---------------+-------+-------+-------+--------+-------+--------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+--------------------------------------------+
+| Argument | Direction | Datatype                                   |
++----------+-----------+--------------------------------------------+
+| istrm    | in        | stream<hls::axis<ap_int<32>, 0, 0, 0>, 0>& |
+| ostrm    | out       | stream<hls::axis<ap_int<32>, 0, 0, 0>, 0>& |
++----------+-----------+--------------------------------------------+
+
+* SW-to-HW Mapping
++----------+--------------+-----------+
+| Argument | HW Interface | HW Type   |
++----------+--------------+-----------+
+| istrm    | istrm        | interface |
+| ostrm    | ostrm        | interface |
++----------+--------------+-----------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+  No burst in design
+
+================================================================
+== Bind Op Report
+================================================================
++---------------------------------------+-----+--------+----------+-----+--------+---------+
+| Name                                  | DSP | Pragma | Variable | Op  | Impl   | Latency |
++---------------------------------------+-----+--------+----------+-----+--------+---------+
+| + topk_sort                           | 0   |        |          |     |        |         |
+|   i_3_fu_3040_p2                      | -   |        | i_3      | add | fabric | 0       |
+|   j_fu_4075_p2                        | -   |        | j        | add | fabric | 0       |
+|   add_ln57_fu_4085_p2                 | -   |        | add_ln57 | add | fabric | 0       |
+|  + topk_sort_Pipeline_VITIS_LOOP_20_1 | 0   |        |          |     |        |         |
+|    add_ln20_fu_1836_p2                | -   |        | add_ln20 | add | fabric | 0       |
+|  + topk_sort_Pipeline_VITIS_LOOP_36_3 | 0   |        |          |     |        |         |
+|    add_ln36_fu_648_p2                 | -   |        | add_ln36 | add | fabric | 0       |
+|  + topk_sort_Pipeline_VITIS_LOOP_58_5 | 0   |        |          |     |        |         |
+|    add_ln58_fu_3678_p2                | -   |        | add_ln58 | add | fabric | 0       |
+|  + topk_sort_Pipeline_VITIS_LOOP_70_6 | 0   |        |          |     |        |         |
+|    add_ln70_fu_884_p2                 | -   |        | add_ln70 | add | fabric | 0       |
++---------------------------------------+-----+--------+----------+-----+--------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
+  No bind storage info in design
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------------+------------------------------------------+------------------------------------------------+
+| Type            | Options                                  | Location                                       |
++-----------------+------------------------------------------+------------------------------------------------+
+| interface       | s_axilite port=return bundle=CONTROL_BUS | topk_sort/topk_sort.cpp:9 in topk_sort, return |
+| interface       | axis port=istrm                          | topk_sort/topk_sort.cpp:10 in topk_sort, istrm |
+| interface       | axis port=ostrm                          | topk_sort/topk_sort.cpp:11 in topk_sort, ostrm |
+| array_partition | variable=arr complete dim=0              | topk_sort/topk_sort.cpp:15 in topk_sort, arr   |
+| array_partition | variable=post complete dim=0             | topk_sort/topk_sort.cpp:16 in topk_sort, post  |
+| pipeline        | II=1                                     | topk_sort/topk_sort.cpp:21 in topk_sort        |
+| pipeline        | II=1                                     | topk_sort/topk_sort.cpp:37 in topk_sort        |
+| pipeline        | II=1                                     | topk_sort/topk_sort.cpp:59 in topk_sort        |
+| pipeline        | II=1                                     | topk_sort/topk_sort.cpp:71 in topk_sort        |
++-----------------+------------------------------------------+------------------------------------------------+
+
+

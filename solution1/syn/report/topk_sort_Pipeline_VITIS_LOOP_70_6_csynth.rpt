@@ -1,0 +1,252 @@
+
+
+================================================================
+== Vitis HLS Report for 'topk_sort_Pipeline_VITIS_LOOP_70_6'
+================================================================
+* Date:           Sun Jul 21 01:25:29 2024
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
+* Project:        topk_sort
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xck26-sfvc784-2LV-c
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  1.244 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |      102|      102|  1.020 us|  1.020 us|  102|  102|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                   |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |     Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_70_6  |      100|      100|         2|          1|          1|   100|       yes|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+------+--------+--------+-----+
+|       Name      | BRAM_18K|  DSP |   FF   |   LUT  | URAM|
++-----------------+---------+------+--------+--------+-----+
+|DSP              |        -|     -|       -|       -|    -|
+|Expression       |        -|     -|       0|      38|    -|
+|FIFO             |        -|     -|       -|       -|    -|
+|Instance         |        -|     -|       0|     499|    -|
+|Memory           |        -|     -|       -|       -|    -|
+|Multiplexer      |        -|     -|       -|      45|    -|
+|Register         |        -|     -|      43|       -|    -|
++-----------------+---------+------+--------+--------+-----+
+|Total            |        0|     0|      43|     582|    0|
++-----------------+---------+------+--------+--------+-----+
+|Available        |      288|  1248|  234240|  117120|   64|
++-----------------+---------+------+--------+--------+-----+
+|Utilization (%)  |        0|     0|      ~0|      ~0|    0|
++-----------------+---------+------+--------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    +----------------------+-----------------+---------+----+---+-----+-----+
+    |       Instance       |      Module     | BRAM_18K| DSP| FF| LUT | URAM|
+    +----------------------+-----------------+---------+----+---+-----+-----+
+    |mux_1007_32_1_1_U610  |mux_1007_32_1_1  |        0|   0|  0|  499|    0|
+    +----------------------+-----------------+---------+----+---+-----+-----+
+    |Total                 |                 |        0|   0|  0|  499|    0|
+    +----------------------+-----------------+---------+----+---+-----+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------------+----------+----+---+----+------------+------------+
+    |       Variable Name       | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------------+----------+----+---+----+------------+------------+
+    |add_ln70_fu_884_p2         |         +|   0|  0|  14|           7|           1|
+    |ap_block_pp0_stage0_01001  |       and|   0|  0|   2|           1|           1|
+    |icmp_ln70_fu_878_p2        |      icmp|   0|  0|  10|           7|           6|
+    |pix_last_V_fu_1096_p2      |      icmp|   0|  0|  10|           7|           6|
+    |ap_enable_pp0              |       xor|   0|  0|   2|           1|           2|
+    +---------------------------+----------+----+---+----+------------+------------+
+    |Total                      |          |   0|  0|  38|          23|          16|
+    +---------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------------------+----+-----------+-----+-----------+
+    |           Name          | LUT| Input Size| Bits| Total Bits|
+    +-------------------------+----+-----------+-----+-----------+
+    |ap_done_int              |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter1  |   9|          2|    1|          2|
+    |ap_sig_allocacmp_i_1     |   9|          2|    7|         14|
+    |i_fu_248                 |   9|          2|    7|         14|
+    |ostrm_TDATA_blk_n        |   9|          2|    1|          2|
+    +-------------------------+----+-----------+-----+-----------+
+    |Total                    |  45|         10|   17|         34|
+    +-------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------+----+----+-----+-----------+
+    |           Name          | FF | LUT| Bits| Const Bits|
+    +-------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                |   1|   0|    1|          0|
+    |ap_done_reg              |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1  |   1|   0|    1|          0|
+    |i_fu_248                 |   7|   0|    7|          0|
+    |pix_data_V_reg_1117      |  32|   0|   32|          0|
+    |pix_last_V_reg_1122      |   1|   0|    1|          0|
+    +-------------------------+----+----+-----+-----------+
+    |Total                    |  43|   0|   43|          0|
+    +-------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++--------------+-----+-----+------------+------------------------------------+--------------+
+|   RTL Ports  | Dir | Bits|  Protocol  |            Source Object           |    C Type    |
++--------------+-----+-----+------------+------------------------------------+--------------+
+|ap_clk        |   in|    1|  ap_ctrl_hs|  topk_sort_Pipeline_VITIS_LOOP_70_6|  return value|
+|ap_rst        |   in|    1|  ap_ctrl_hs|  topk_sort_Pipeline_VITIS_LOOP_70_6|  return value|
+|ap_start      |   in|    1|  ap_ctrl_hs|  topk_sort_Pipeline_VITIS_LOOP_70_6|  return value|
+|ap_done       |  out|    1|  ap_ctrl_hs|  topk_sort_Pipeline_VITIS_LOOP_70_6|  return value|
+|ap_idle       |  out|    1|  ap_ctrl_hs|  topk_sort_Pipeline_VITIS_LOOP_70_6|  return value|
+|ap_ready      |  out|    1|  ap_ctrl_hs|  topk_sort_Pipeline_VITIS_LOOP_70_6|  return value|
+|ostrm_TREADY  |   in|    1|        axis|                      ostrm_V_data_V|       pointer|
+|ostrm_TDATA   |  out|   32|        axis|                      ostrm_V_data_V|       pointer|
+|arr_300       |   in|   32|     ap_none|                             arr_300|        scalar|
+|arr_301       |   in|   32|     ap_none|                             arr_301|        scalar|
+|arr_302       |   in|   32|     ap_none|                             arr_302|        scalar|
+|arr_303       |   in|   32|     ap_none|                             arr_303|        scalar|
+|arr_304       |   in|   32|     ap_none|                             arr_304|        scalar|
+|arr_305       |   in|   32|     ap_none|                             arr_305|        scalar|
+|arr_306       |   in|   32|     ap_none|                             arr_306|        scalar|
+|arr_307       |   in|   32|     ap_none|                             arr_307|        scalar|
+|arr_308       |   in|   32|     ap_none|                             arr_308|        scalar|
+|arr_309       |   in|   32|     ap_none|                             arr_309|        scalar|
+|arr_310       |   in|   32|     ap_none|                             arr_310|        scalar|
+|arr_311       |   in|   32|     ap_none|                             arr_311|        scalar|
+|arr_312       |   in|   32|     ap_none|                             arr_312|        scalar|
+|arr_313       |   in|   32|     ap_none|                             arr_313|        scalar|
+|arr_314       |   in|   32|     ap_none|                             arr_314|        scalar|
+|arr_315       |   in|   32|     ap_none|                             arr_315|        scalar|
+|arr_316       |   in|   32|     ap_none|                             arr_316|        scalar|
+|arr_317       |   in|   32|     ap_none|                             arr_317|        scalar|
+|arr_318       |   in|   32|     ap_none|                             arr_318|        scalar|
+|arr_319       |   in|   32|     ap_none|                             arr_319|        scalar|
+|arr_320       |   in|   32|     ap_none|                             arr_320|        scalar|
+|arr_321       |   in|   32|     ap_none|                             arr_321|        scalar|
+|arr_322       |   in|   32|     ap_none|                             arr_322|        scalar|
+|arr_323       |   in|   32|     ap_none|                             arr_323|        scalar|
+|arr_324       |   in|   32|     ap_none|                             arr_324|        scalar|
+|arr_325       |   in|   32|     ap_none|                             arr_325|        scalar|
+|arr_326       |   in|   32|     ap_none|                             arr_326|        scalar|
+|arr_327       |   in|   32|     ap_none|                             arr_327|        scalar|
+|arr_328       |   in|   32|     ap_none|                             arr_328|        scalar|
+|arr_329       |   in|   32|     ap_none|                             arr_329|        scalar|
+|arr_330       |   in|   32|     ap_none|                             arr_330|        scalar|
+|arr_331       |   in|   32|     ap_none|                             arr_331|        scalar|
+|arr_332       |   in|   32|     ap_none|                             arr_332|        scalar|
+|arr_333       |   in|   32|     ap_none|                             arr_333|        scalar|
+|arr_334       |   in|   32|     ap_none|                             arr_334|        scalar|
+|arr_335       |   in|   32|     ap_none|                             arr_335|        scalar|
+|arr_336       |   in|   32|     ap_none|                             arr_336|        scalar|
+|arr_337       |   in|   32|     ap_none|                             arr_337|        scalar|
+|arr_338       |   in|   32|     ap_none|                             arr_338|        scalar|
+|arr_339       |   in|   32|     ap_none|                             arr_339|        scalar|
+|arr_340       |   in|   32|     ap_none|                             arr_340|        scalar|
+|arr_341       |   in|   32|     ap_none|                             arr_341|        scalar|
+|arr_342       |   in|   32|     ap_none|                             arr_342|        scalar|
+|arr_343       |   in|   32|     ap_none|                             arr_343|        scalar|
+|arr_344       |   in|   32|     ap_none|                             arr_344|        scalar|
+|arr_345       |   in|   32|     ap_none|                             arr_345|        scalar|
+|arr_346       |   in|   32|     ap_none|                             arr_346|        scalar|
+|arr_347       |   in|   32|     ap_none|                             arr_347|        scalar|
+|arr_348       |   in|   32|     ap_none|                             arr_348|        scalar|
+|arr_349       |   in|   32|     ap_none|                             arr_349|        scalar|
+|arr_350       |   in|   32|     ap_none|                             arr_350|        scalar|
+|arr_351       |   in|   32|     ap_none|                             arr_351|        scalar|
+|arr_352       |   in|   32|     ap_none|                             arr_352|        scalar|
+|arr_353       |   in|   32|     ap_none|                             arr_353|        scalar|
+|arr_354       |   in|   32|     ap_none|                             arr_354|        scalar|
+|arr_355       |   in|   32|     ap_none|                             arr_355|        scalar|
+|arr_356       |   in|   32|     ap_none|                             arr_356|        scalar|
+|arr_357       |   in|   32|     ap_none|                             arr_357|        scalar|
+|arr_358       |   in|   32|     ap_none|                             arr_358|        scalar|
+|arr_359       |   in|   32|     ap_none|                             arr_359|        scalar|
+|arr_360       |   in|   32|     ap_none|                             arr_360|        scalar|
+|arr_361       |   in|   32|     ap_none|                             arr_361|        scalar|
+|arr_362       |   in|   32|     ap_none|                             arr_362|        scalar|
+|arr_363       |   in|   32|     ap_none|                             arr_363|        scalar|
+|arr_364       |   in|   32|     ap_none|                             arr_364|        scalar|
+|arr_365       |   in|   32|     ap_none|                             arr_365|        scalar|
+|arr_366       |   in|   32|     ap_none|                             arr_366|        scalar|
+|arr_367       |   in|   32|     ap_none|                             arr_367|        scalar|
+|arr_368       |   in|   32|     ap_none|                             arr_368|        scalar|
+|arr_369       |   in|   32|     ap_none|                             arr_369|        scalar|
+|arr_370       |   in|   32|     ap_none|                             arr_370|        scalar|
+|arr_371       |   in|   32|     ap_none|                             arr_371|        scalar|
+|arr_372       |   in|   32|     ap_none|                             arr_372|        scalar|
+|arr_373       |   in|   32|     ap_none|                             arr_373|        scalar|
+|arr_374       |   in|   32|     ap_none|                             arr_374|        scalar|
+|arr_375       |   in|   32|     ap_none|                             arr_375|        scalar|
+|arr_376       |   in|   32|     ap_none|                             arr_376|        scalar|
+|arr_377       |   in|   32|     ap_none|                             arr_377|        scalar|
+|arr_378       |   in|   32|     ap_none|                             arr_378|        scalar|
+|arr_379       |   in|   32|     ap_none|                             arr_379|        scalar|
+|arr_380       |   in|   32|     ap_none|                             arr_380|        scalar|
+|arr_381       |   in|   32|     ap_none|                             arr_381|        scalar|
+|arr_382       |   in|   32|     ap_none|                             arr_382|        scalar|
+|arr_383       |   in|   32|     ap_none|                             arr_383|        scalar|
+|arr_384       |   in|   32|     ap_none|                             arr_384|        scalar|
+|arr_385       |   in|   32|     ap_none|                             arr_385|        scalar|
+|arr_386       |   in|   32|     ap_none|                             arr_386|        scalar|
+|arr_387       |   in|   32|     ap_none|                             arr_387|        scalar|
+|arr_388       |   in|   32|     ap_none|                             arr_388|        scalar|
+|arr_389       |   in|   32|     ap_none|                             arr_389|        scalar|
+|arr_390       |   in|   32|     ap_none|                             arr_390|        scalar|
+|arr_391       |   in|   32|     ap_none|                             arr_391|        scalar|
+|arr_392       |   in|   32|     ap_none|                             arr_392|        scalar|
+|arr_393       |   in|   32|     ap_none|                             arr_393|        scalar|
+|arr_394       |   in|   32|     ap_none|                             arr_394|        scalar|
+|arr_395       |   in|   32|     ap_none|                             arr_395|        scalar|
+|arr_396       |   in|   32|     ap_none|                             arr_396|        scalar|
+|arr_397       |   in|   32|     ap_none|                             arr_397|        scalar|
+|arr_398       |   in|   32|     ap_none|                             arr_398|        scalar|
+|arr_399       |   in|   32|     ap_none|                             arr_399|        scalar|
+|ostrm_TVALID  |  out|    1|        axis|                      ostrm_V_last_V|       pointer|
+|ostrm_TLAST   |  out|    1|        axis|                      ostrm_V_last_V|       pointer|
+|ostrm_TKEEP   |  out|    4|        axis|                      ostrm_V_keep_V|       pointer|
+|ostrm_TSTRB   |  out|    4|        axis|                      ostrm_V_strb_V|       pointer|
++--------------+-----+-----+------------+------------------------------------+--------------+
+
