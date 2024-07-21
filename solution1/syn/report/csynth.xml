@@ -12,28 +12,29 @@
         <FlowTarget>vivado</FlowTarget>
     </UserAssignments>
     <PerformanceEstimates>
-        <PipelineType>no</PipelineType>
+        <PipelineType>dataflow</PipelineType>
         <SummaryOfTimingAnalysis>
             <unit>ns</unit>
-            <EstimatedClockPeriod>2.466</EstimatedClockPeriod>
+            <EstimatedClockPeriod>5.283</EstimatedClockPeriod>
         </SummaryOfTimingAnalysis>
         <SummaryOfOverallLatency>
             <unit>clock cycles</unit>
-            <Best-caseLatency>1212</Best-caseLatency>
-            <Average-caseLatency>1212</Average-caseLatency>
-            <Worst-caseLatency>1212</Worst-caseLatency>
-            <Best-caseRealTimeLatency>12.120 us</Best-caseRealTimeLatency>
-            <Average-caseRealTimeLatency>12.120 us</Average-caseRealTimeLatency>
-            <Worst-caseRealTimeLatency>12.120 us</Worst-caseRealTimeLatency>
-            <Interval-min>1213</Interval-min>
-            <Interval-max>1213</Interval-max>
+            <Best-caseLatency>1208</Best-caseLatency>
+            <Average-caseLatency>1208</Average-caseLatency>
+            <Worst-caseLatency>1208</Worst-caseLatency>
+            <Best-caseRealTimeLatency>12.080 us</Best-caseRealTimeLatency>
+            <Average-caseRealTimeLatency>12.080 us</Average-caseRealTimeLatency>
+            <Worst-caseRealTimeLatency>12.080 us</Worst-caseRealTimeLatency>
+            <DataflowPipelineThroughput>1003</DataflowPipelineThroughput>
+            <Interval-min>1003</Interval-min>
+            <Interval-max>1003</Interval-max>
         </SummaryOfOverallLatency>
     </PerformanceEstimates>
     <AreaEstimates>
         <Resources>
             <BRAM_18K>0</BRAM_18K>
-            <FF>12785</FF>
-            <LUT>28257</LUT>
+            <FF>52110</FF>
+            <LUT>60979</LUT>
             <URAM>0</URAM>
             <DSP>0</DSP>
         </Resources>
@@ -279,42 +280,6 @@
             <CType>int</CType>
         </RtlPorts>
         <RtlPorts>
-            <name>istrm_TVALID</name>
-            <Object>istrm_V_last_V</Object>
-            <Type>pointer</Type>
-            <Scope/>
-            <IOProtocol>axis</IOProtocol>
-            <IOConfig>register, both mode</IOConfig>
-            <Dir>in</Dir>
-            <Bits>1</Bits>
-            <Attribute>control</Attribute>
-            <CType>int</CType>
-        </RtlPorts>
-        <RtlPorts>
-            <name>istrm_TREADY</name>
-            <Object>istrm_V_last_V</Object>
-            <Type>pointer</Type>
-            <Scope/>
-            <IOProtocol>axis</IOProtocol>
-            <IOConfig>register, both mode</IOConfig>
-            <Dir>out</Dir>
-            <Bits>1</Bits>
-            <Attribute>control</Attribute>
-            <CType>int</CType>
-        </RtlPorts>
-        <RtlPorts>
-            <name>istrm_TLAST</name>
-            <Object>istrm_V_last_V</Object>
-            <Type>pointer</Type>
-            <Scope/>
-            <IOProtocol>axis</IOProtocol>
-            <IOConfig>register, both mode</IOConfig>
-            <Dir>in</Dir>
-            <Bits>1</Bits>
-            <Attribute>data</Attribute>
-            <CType>int</CType>
-        </RtlPorts>
-        <RtlPorts>
             <name>istrm_TKEEP</name>
             <Object>istrm_V_keep_V</Object>
             <Type>pointer</Type>
@@ -339,32 +304,20 @@
             <CType>int</CType>
         </RtlPorts>
         <RtlPorts>
-            <name>ostrm_TDATA</name>
-            <Object>ostrm_V_data_V</Object>
+            <name>istrm_TLAST</name>
+            <Object>istrm_V_last_V</Object>
             <Type>pointer</Type>
             <Scope/>
             <IOProtocol>axis</IOProtocol>
             <IOConfig>register, both mode</IOConfig>
-            <Dir>out</Dir>
-            <Bits>32</Bits>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
             <Attribute>data</Attribute>
             <CType>int</CType>
         </RtlPorts>
         <RtlPorts>
-            <name>ostrm_TVALID</name>
-            <Object>ostrm_V_last_V</Object>
-            <Type>pointer</Type>
-            <Scope/>
-            <IOProtocol>axis</IOProtocol>
-            <IOConfig>register, both mode</IOConfig>
-            <Dir>out</Dir>
-            <Bits>1</Bits>
-            <Attribute>control</Attribute>
-            <CType>int</CType>
-        </RtlPorts>
-        <RtlPorts>
-            <name>ostrm_TREADY</name>
-            <Object>ostrm_V_last_V</Object>
+            <name>istrm_TVALID</name>
+            <Object>istrm_V_last_V</Object>
             <Type>pointer</Type>
             <Scope/>
             <IOProtocol>axis</IOProtocol>
@@ -375,14 +328,26 @@
             <CType>int</CType>
         </RtlPorts>
         <RtlPorts>
-            <name>ostrm_TLAST</name>
-            <Object>ostrm_V_last_V</Object>
+            <name>istrm_TREADY</name>
+            <Object>istrm_V_last_V</Object>
             <Type>pointer</Type>
             <Scope/>
             <IOProtocol>axis</IOProtocol>
             <IOConfig>register, both mode</IOConfig>
             <Dir>out</Dir>
             <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ostrm_TDATA</name>
+            <Object>ostrm_V_data_V</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>axis</IOProtocol>
+            <IOConfig>register, both mode</IOConfig>
+            <Dir>out</Dir>
+            <Bits>32</Bits>
             <Attribute>data</Attribute>
             <CType>int</CType>
         </RtlPorts>
@@ -410,40 +375,77 @@
             <Attribute>data</Attribute>
             <CType>int</CType>
         </RtlPorts>
+        <RtlPorts>
+            <name>ostrm_TLAST</name>
+            <Object>ostrm_V_last_V</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>axis</IOProtocol>
+            <IOConfig>register, both mode</IOConfig>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ostrm_TVALID</name>
+            <Object>ostrm_V_last_V</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>axis</IOProtocol>
+            <IOConfig>register, both mode</IOConfig>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ostrm_TREADY</name>
+            <Object>ostrm_V_last_V</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>axis</IOProtocol>
+            <IOConfig>register, both mode</IOConfig>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
     </InterfaceSummary>
     <RTLDesignHierarchy>
         <TopModule MAX_DEPTH="3">
             <ModuleName>topk_sort</ModuleName>
             <InstancesList>
                 <Instance>
-                    <InstName>grp_topk_sort_Pipeline_VITIS_LOOP_33_2_fu_1242</InstName>
-                    <ModuleName>topk_sort_Pipeline_VITIS_LOOP_33_2</ModuleName>
+                    <InstName>Loop_VITIS_LOOP_35_2_proc3_U0</InstName>
+                    <ModuleName>Loop_VITIS_LOOP_35_2_proc3</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>1242</ID>
-                    <BindInstances>i_5_fu_3654_p2</BindInstances>
+                    <ID>48</ID>
+                    <BindInstances>i_4_fu_1863_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_topk_sort_Pipeline_VITIS_LOOP_66_5_fu_1453</InstName>
-                    <ModuleName>topk_sort_Pipeline_VITIS_LOOP_66_5</ModuleName>
+                    <InstName>Loop_VITIS_LOOP_68_5_proc_U0</InstName>
+                    <ModuleName>Loop_VITIS_LOOP_68_5_proc</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>1453</ID>
-                    <BindInstances>i_3_fu_4506_p2</BindInstances>
+                    <ID>60</ID>
+                    <BindInstances>i_1_fu_3615_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_topk_sort_Pipeline_VITIS_LOOP_88_8_fu_1754</InstName>
-                    <ModuleName>topk_sort_Pipeline_VITIS_LOOP_88_8</ModuleName>
+                    <InstName>Loop_VITIS_LOOP_90_8_proc_U0</InstName>
+                    <ModuleName>Loop_VITIS_LOOP_90_8_proc</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>1754</ID>
-                    <BindInstances>add_ln88_fu_884_p2</BindInstances>
+                    <ID>262</ID>
+                    <BindInstances>add_ln90_fu_884_p2</BindInstances>
                 </Instance>
             </InstancesList>
+            <BindInstances>arr_loc_channel_U post_99_loc_channel_U arr_1_loc_channel_U post_100_loc_channel_U arr_2_loc_channel_U post_101_loc_channel_U arr_3_loc_channel_U post_102_loc_channel_U arr_4_loc_channel_U post_103_loc_channel_U arr_5_loc_channel_U post_104_loc_channel_U arr_6_loc_channel_U post_105_loc_channel_U arr_7_loc_channel_U post_106_loc_channel_U arr_8_loc_channel_U post_107_loc_channel_U arr_9_loc_channel_U post_108_loc_channel_U arr_10_loc_channel_U post_109_loc_channel_U arr_11_loc_channel_U post_110_loc_channel_U arr_12_loc_channel_U post_111_loc_channel_U arr_13_loc_channel_U post_112_loc_channel_U arr_14_loc_channel_U post_113_loc_channel_U arr_15_loc_channel_U post_114_loc_channel_U arr_16_loc_channel_U post_115_loc_channel_U arr_17_loc_channel_U post_116_loc_channel_U arr_18_loc_channel_U post_117_loc_channel_U arr_19_loc_channel_U post_118_loc_channel_U arr_20_loc_channel_U post_119_loc_channel_U arr_21_loc_channel_U post_120_loc_channel_U arr_22_loc_channel_U post_121_loc_channel_U arr_23_loc_channel_U post_122_loc_channel_U arr_24_loc_channel_U post_123_loc_channel_U arr_25_loc_channel_U post_124_loc_channel_U arr_26_loc_channel_U post_125_loc_channel_U arr_27_loc_channel_U post_126_loc_channel_U arr_28_loc_channel_U post_127_loc_channel_U arr_29_loc_channel_U post_128_loc_channel_U arr_30_loc_channel_U post_129_loc_channel_U arr_31_loc_channel_U post_130_loc_channel_U arr_32_loc_channel_U post_131_loc_channel_U arr_33_loc_channel_U post_132_loc_channel_U arr_34_loc_channel_U post_133_loc_channel_U arr_35_loc_channel_U post_134_loc_channel_U arr_36_loc_channel_U post_135_loc_channel_U arr_37_loc_channel_U post_136_loc_channel_U arr_38_loc_channel_U post_137_loc_channel_U arr_39_loc_channel_U post_138_loc_channel_U arr_40_loc_channel_U post_139_loc_channel_U arr_41_loc_channel_U post_140_loc_channel_U arr_42_loc_channel_U post_141_loc_channel_U arr_43_loc_channel_U post_142_loc_channel_U arr_44_loc_channel_U post_143_loc_channel_U arr_45_loc_channel_U post_144_loc_channel_U arr_46_loc_channel_U post_145_loc_channel_U arr_47_loc_channel_U post_146_loc_channel_U arr_48_loc_channel_U post_147_loc_channel_U arr_49_loc_channel_U post_148_loc_channel_U arr_50_loc_channel_U post_149_loc_channel_U arr_51_loc_channel_U post_150_loc_channel_U arr_52_loc_channel_U post_151_loc_channel_U arr_53_loc_channel_U post_152_loc_channel_U arr_54_loc_channel_U post_153_loc_channel_U arr_55_loc_channel_U post_154_loc_channel_U arr_56_loc_channel_U post_155_loc_channel_U arr_57_loc_channel_U post_156_loc_channel_U arr_58_loc_channel_U post_157_loc_channel_U arr_59_loc_channel_U post_158_loc_channel_U arr_60_loc_channel_U post_159_loc_channel_U arr_61_loc_channel_U post_160_loc_channel_U arr_62_loc_channel_U post_161_loc_channel_U arr_63_loc_channel_U post_162_loc_channel_U arr_64_loc_channel_U post_163_loc_channel_U arr_65_loc_channel_U post_164_loc_channel_U arr_66_loc_channel_U post_165_loc_channel_U arr_67_loc_channel_U post_166_loc_channel_U arr_68_loc_channel_U post_167_loc_channel_U arr_69_loc_channel_U post_168_loc_channel_U arr_70_loc_channel_U post_169_loc_channel_U arr_71_loc_channel_U post_170_loc_channel_U arr_72_loc_channel_U post_171_loc_channel_U arr_73_loc_channel_U post_172_loc_channel_U arr_74_loc_channel_U post_173_loc_channel_U arr_75_loc_channel_U post_174_loc_channel_U arr_76_loc_channel_U post_175_loc_channel_U arr_77_loc_channel_U post_176_loc_channel_U arr_78_loc_channel_U post_177_loc_channel_U arr_79_loc_channel_U post_178_loc_channel_U arr_80_loc_channel_U post_179_loc_channel_U arr_81_loc_channel_U post_180_loc_channel_U arr_82_loc_channel_U post_181_loc_channel_U arr_83_loc_channel_U post_182_loc_channel_U arr_84_loc_channel_U post_183_loc_channel_U arr_85_loc_channel_U post_184_loc_channel_U arr_86_loc_channel_U post_185_loc_channel_U arr_87_loc_channel_U post_186_loc_channel_U arr_88_loc_channel_U post_187_loc_channel_U arr_89_loc_channel_U post_188_loc_channel_U arr_90_loc_channel_U post_189_loc_channel_U arr_91_loc_channel_U post_190_loc_channel_U arr_92_loc_channel_U post_191_loc_channel_U arr_93_loc_channel_U post_192_loc_channel_U arr_94_loc_channel_U post_193_loc_channel_U arr_95_loc_channel_U post_194_loc_channel_U arr_96_loc_channel_U post_195_loc_channel_U arr_97_loc_channel_U post_196_loc_channel_U arr_98_loc_channel_U post_loc_channel_U arr_99_loc_channel_U arr_100_loc_channel_U arr_101_loc_channel_U arr_102_loc_channel_U arr_103_loc_channel_U arr_104_loc_channel_U arr_105_loc_channel_U arr_106_loc_channel_U arr_107_loc_channel_U arr_108_loc_channel_U arr_109_loc_channel_U arr_110_loc_channel_U arr_111_loc_channel_U arr_112_loc_channel_U arr_113_loc_channel_U arr_114_loc_channel_U arr_115_loc_channel_U arr_116_loc_channel_U arr_117_loc_channel_U arr_118_loc_channel_U arr_119_loc_channel_U arr_120_loc_channel_U arr_121_loc_channel_U arr_122_loc_channel_U arr_123_loc_channel_U arr_124_loc_channel_U arr_125_loc_channel_U arr_126_loc_channel_U arr_127_loc_channel_U arr_128_loc_channel_U arr_129_loc_channel_U arr_130_loc_channel_U arr_131_loc_channel_U arr_132_loc_channel_U arr_133_loc_channel_U arr_134_loc_channel_U arr_135_loc_channel_U arr_136_loc_channel_U arr_137_loc_channel_U arr_138_loc_channel_U arr_139_loc_channel_U arr_140_loc_channel_U arr_141_loc_channel_U arr_142_loc_channel_U arr_143_loc_channel_U arr_144_loc_channel_U arr_145_loc_channel_U arr_146_loc_channel_U arr_147_loc_channel_U arr_148_loc_channel_U arr_149_loc_channel_U arr_150_loc_channel_U arr_151_loc_channel_U arr_152_loc_channel_U arr_153_loc_channel_U arr_154_loc_channel_U arr_155_loc_channel_U arr_156_loc_channel_U arr_157_loc_channel_U arr_158_loc_channel_U arr_159_loc_channel_U arr_160_loc_channel_U arr_161_loc_channel_U arr_162_loc_channel_U arr_163_loc_channel_U arr_164_loc_channel_U arr_165_loc_channel_U arr_166_loc_channel_U arr_167_loc_channel_U arr_168_loc_channel_U arr_169_loc_channel_U arr_170_loc_channel_U arr_171_loc_channel_U arr_172_loc_channel_U arr_173_loc_channel_U arr_174_loc_channel_U arr_175_loc_channel_U arr_176_loc_channel_U arr_177_loc_channel_U arr_178_loc_channel_U arr_179_loc_channel_U arr_180_loc_channel_U arr_181_loc_channel_U arr_182_loc_channel_U arr_183_loc_channel_U arr_184_loc_channel_U arr_185_loc_channel_U arr_186_loc_channel_U arr_187_loc_channel_U arr_188_loc_channel_U arr_189_loc_channel_U arr_190_loc_channel_U arr_191_loc_channel_U arr_192_loc_channel_U arr_193_loc_channel_U arr_194_loc_channel_U arr_195_loc_channel_U arr_196_loc_channel_U arr_197_loc_channel_U arr_198_loc_channel_U</BindInstances>
         </TopModule>
     </RTLDesignHierarchy>
     <ModuleInformation>
         <Module>
-            <Name>topk_sort_Pipeline_VITIS_LOOP_33_2</Name>
+            <Name>Loop_VITIS_LOOP_35_2_proc3</Name>
             <Loops>
-                <VITIS_LOOP_33_2/>
+                <VITIS_LOOP_35_2/>
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
@@ -462,8 +464,8 @@
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
-                    <VITIS_LOOP_33_2>
-                        <Name>VITIS_LOOP_33_2</Name>
+                    <VITIS_LOOP_35_2>
+                        <Name>VITIS_LOOP_35_2</Name>
                         <TripCount>1000</TripCount>
                         <Latency>1000</Latency>
                         <AbsoluteTimeLatency>10.000 us</AbsoluteTimeLatency>
@@ -471,17 +473,17 @@
                         <PipelineDepth>1</PipelineDepth>
                         <PipelineType>yes</PipelineType>
                         <InstanceList/>
-                    </VITIS_LOOP_33_2>
+                    </VITIS_LOOP_35_2>
                 </SummaryOfLoopLatency>
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <FF>6381</FF>
+                    <FF>12748</FF>
                     <AVAIL_FF>234240</AVAIL_FF>
-                    <UTIL_FF>2</UTIL_FF>
-                    <LUT>10229</LUT>
+                    <UTIL_FF>5</UTIL_FF>
+                    <LUT>15600</LUT>
                     <AVAIL_LUT>117120</AVAIL_LUT>
-                    <UTIL_LUT>8</UTIL_LUT>
+                    <UTIL_LUT>13</UTIL_LUT>
                     <BRAM_18K>0</BRAM_18K>
                     <AVAIL_BRAM>288</AVAIL_BRAM>
                     <UTIL_BRAM>0</UTIL_BRAM>
@@ -494,19 +496,19 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_33_2" OPTYPE="add" PRAGMA="" RTLNAME="i_5_fu_3654_p2" SOURCE="topk_sort/topk_sort.cpp:33" URAM="0" VARIABLE="i_5"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_35_2" OPTYPE="add" PRAGMA="" RTLNAME="i_4_fu_1863_p2" SOURCE="topk_sort/topk_sort.cpp:35" URAM="0" VARIABLE="i_4"/>
             </BindNodes>
         </Module>
         <Module>
-            <Name>topk_sort_Pipeline_VITIS_LOOP_66_5</Name>
+            <Name>Loop_VITIS_LOOP_68_5_proc</Name>
             <Loops>
-                <VITIS_LOOP_66_5/>
+                <VITIS_LOOP_68_5/>
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
                     <TargetClockPeriod>10.00</TargetClockPeriod>
                     <ClockUncertainty>2.70</ClockUncertainty>
-                    <EstimatedClockPeriod>2.466</EstimatedClockPeriod>
+                    <EstimatedClockPeriod>3.705</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>101</Best-caseLatency>
@@ -519,8 +521,8 @@
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
-                    <VITIS_LOOP_66_5>
-                        <Name>VITIS_LOOP_66_5</Name>
+                    <VITIS_LOOP_68_5>
+                        <Name>VITIS_LOOP_68_5</Name>
                         <TripCount>99</TripCount>
                         <Latency>99</Latency>
                         <AbsoluteTimeLatency>0.990 us</AbsoluteTimeLatency>
@@ -528,17 +530,17 @@
                         <PipelineDepth>1</PipelineDepth>
                         <PipelineType>yes</PipelineType>
                         <InstanceList/>
-                    </VITIS_LOOP_66_5>
+                    </VITIS_LOOP_68_5>
                 </SummaryOfLoopLatency>
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <FF>6314</FF>
+                    <FF>9481</FF>
                     <AVAIL_FF>234240</AVAIL_FF>
-                    <UTIL_FF>2</UTIL_FF>
-                    <LUT>17346</LUT>
+                    <UTIL_FF>4</UTIL_FF>
+                    <LUT>20903</LUT>
                     <AVAIL_LUT>117120</AVAIL_LUT>
-                    <UTIL_LUT>14</UTIL_LUT>
+                    <UTIL_LUT>17</UTIL_LUT>
                     <BRAM_18K>0</BRAM_18K>
                     <AVAIL_BRAM>288</AVAIL_BRAM>
                     <UTIL_BRAM>0</UTIL_BRAM>
@@ -551,49 +553,49 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_66_5" OPTYPE="add" PRAGMA="" RTLNAME="i_3_fu_4506_p2" SOURCE="" URAM="0" VARIABLE="i_3"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_68_5" OPTYPE="add" PRAGMA="" RTLNAME="i_1_fu_3615_p2" SOURCE="" URAM="0" VARIABLE="i_1"/>
             </BindNodes>
         </Module>
         <Module>
-            <Name>topk_sort_Pipeline_VITIS_LOOP_88_8</Name>
+            <Name>Loop_VITIS_LOOP_90_8_proc</Name>
             <Loops>
-                <VITIS_LOOP_88_8/>
+                <VITIS_LOOP_90_8/>
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
                     <TargetClockPeriod>10.00</TargetClockPeriod>
                     <ClockUncertainty>2.70</ClockUncertainty>
-                    <EstimatedClockPeriod>1.244</EstimatedClockPeriod>
+                    <EstimatedClockPeriod>3.018</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
-                    <Best-caseLatency>102</Best-caseLatency>
-                    <Average-caseLatency>102</Average-caseLatency>
-                    <Worst-caseLatency>102</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>1.020 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>1.020 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>1.020 us</Worst-caseRealTimeLatency>
-                    <PipelineInitiationInterval>102</PipelineInitiationInterval>
+                    <Best-caseLatency>103</Best-caseLatency>
+                    <Average-caseLatency>103</Average-caseLatency>
+                    <Worst-caseLatency>103</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>1.030 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>1.030 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>1.030 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>103</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
-                    <VITIS_LOOP_88_8>
-                        <Name>VITIS_LOOP_88_8</Name>
+                    <VITIS_LOOP_90_8>
+                        <Name>VITIS_LOOP_90_8</Name>
                         <TripCount>100</TripCount>
-                        <Latency>100</Latency>
-                        <AbsoluteTimeLatency>1.000 us</AbsoluteTimeLatency>
+                        <Latency>101</Latency>
+                        <AbsoluteTimeLatency>1.010 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
-                        <PipelineDepth>2</PipelineDepth>
+                        <PipelineDepth>3</PipelineDepth>
                         <PipelineType>yes</PipelineType>
                         <InstanceList/>
-                    </VITIS_LOOP_88_8>
+                    </VITIS_LOOP_90_8>
                 </SummaryOfLoopLatency>
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <FF>43</FF>
+                    <FF>45</FF>
                     <AVAIL_FF>234240</AVAIL_FF>
                     <UTIL_FF>~0</UTIL_FF>
-                    <LUT>582</LUT>
+                    <LUT>588</LUT>
                     <AVAIL_LUT>117120</AVAIL_LUT>
                     <UTIL_LUT>~0</UTIL_LUT>
                     <BRAM_18K>0</BRAM_18K>
@@ -608,7 +610,7 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_88_8" OPTYPE="add" PRAGMA="" RTLNAME="add_ln88_fu_884_p2" SOURCE="topk_sort/topk_sort.cpp:88" URAM="0" VARIABLE="add_ln88"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_90_8" OPTYPE="add" PRAGMA="" RTLNAME="add_ln90_fu_884_p2" SOURCE="topk_sort/topk_sort.cpp:90" URAM="0" VARIABLE="add_ln90"/>
             </BindNodes>
         </Module>
         <Module>
@@ -617,17 +619,18 @@
                 <SummaryOfTimingAnalysis>
                     <TargetClockPeriod>10.00</TargetClockPeriod>
                     <ClockUncertainty>2.70</ClockUncertainty>
-                    <EstimatedClockPeriod>2.466</EstimatedClockPeriod>
+                    <EstimatedClockPeriod>5.283</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
-                    <Best-caseLatency>1212</Best-caseLatency>
-                    <Average-caseLatency>1212</Average-caseLatency>
-                    <Worst-caseLatency>1212</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>12.120 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>12.120 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>12.120 us</Worst-caseRealTimeLatency>
-                    <PipelineInitiationInterval>1213</PipelineInitiationInterval>
-                    <PipelineType>no</PipelineType>
+                    <Best-caseLatency>1208</Best-caseLatency>
+                    <Average-caseLatency>1208</Average-caseLatency>
+                    <Worst-caseLatency>1208</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>12.080 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>12.080 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>12.080 us</Worst-caseRealTimeLatency>
+                    <DataflowPipelineThroughput>1003</DataflowPipelineThroughput>
+                    <PipelineInitiationInterval>1003</PipelineInitiationInterval>
+                    <PipelineType>dataflow</PipelineType>
                 </SummaryOfOverallLatency>
             </PerformanceEstimates>
             <AreaEstimates>
@@ -635,12 +638,12 @@
                     <BRAM_18K>0</BRAM_18K>
                     <AVAIL_BRAM>288</AVAIL_BRAM>
                     <UTIL_BRAM>0</UTIL_BRAM>
-                    <FF>12785</FF>
+                    <FF>52110</FF>
                     <AVAIL_FF>234240</AVAIL_FF>
-                    <UTIL_FF>5</UTIL_FF>
-                    <LUT>28257</LUT>
+                    <UTIL_FF>22</UTIL_FF>
+                    <LUT>60981</LUT>
                     <AVAIL_LUT>117120</AVAIL_LUT>
-                    <UTIL_LUT>24</UTIL_LUT>
+                    <UTIL_LUT>52</UTIL_LUT>
                     <URAM>0</URAM>
                     <AVAIL_URAM>64</AVAIL_URAM>
                     <UTIL_URAM>0</UTIL_URAM>
@@ -649,6 +652,306 @@
                     <UTIL_DSP>0</UTIL_DSP>
                 </Resources>
             </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_99_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_99_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_1_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_1_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_100_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_100_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_2_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_2_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_101_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_101_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_3_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_3_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_102_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_102_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_4_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_4_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_103_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_103_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_5_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_5_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_104_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_104_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_6_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_6_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_105_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_105_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_7_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_7_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_106_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_106_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_8_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_8_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_107_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_107_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_9_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_9_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_108_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_108_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_10_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_10_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_109_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_109_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_11_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_11_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_110_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_110_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_12_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_12_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_111_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_111_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_13_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_13_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_112_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_112_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_14_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_14_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_113_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_113_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_15_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_15_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_114_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_114_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_16_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_16_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_115_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_115_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_17_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_17_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_116_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_116_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_18_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_18_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_117_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_117_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_19_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_19_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_118_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_118_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_20_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_20_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_119_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_119_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_21_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_21_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_120_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_120_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_22_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_22_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_121_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_121_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_23_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_23_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_122_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_122_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_24_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_24_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_123_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_123_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_25_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_25_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_124_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_124_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_26_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_26_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_125_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_125_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_27_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_27_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_126_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_126_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_28_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_28_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_127_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_127_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_29_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_29_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_128_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_128_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_30_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_30_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_129_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_129_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_31_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_31_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_130_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_130_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_32_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_32_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_131_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_131_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_33_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_33_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_132_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_132_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_34_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_34_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_133_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_133_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_35_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_35_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_134_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_134_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_36_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_36_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_135_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_135_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_37_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_37_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_136_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_136_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_38_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_38_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_137_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_137_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_39_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_39_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_138_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_138_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_40_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_40_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_139_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_139_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_41_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_41_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_140_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_140_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_42_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_42_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_141_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_141_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_43_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_43_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_142_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_142_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_44_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_44_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_143_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_143_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_45_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_45_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_144_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_144_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_46_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_46_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_145_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_145_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_47_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_47_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_146_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_146_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_48_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_48_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_147_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_147_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_49_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_49_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_148_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_148_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_50_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_50_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_149_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_149_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_51_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_51_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_150_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_150_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_52_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_52_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_151_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_151_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_53_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_53_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_152_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_152_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_54_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_54_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_153_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_153_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_55_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_55_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_154_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_154_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_56_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_56_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_155_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_155_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_57_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_57_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_156_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_156_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_58_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_58_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_157_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_157_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_59_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_59_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_158_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_158_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_60_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_60_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_159_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_159_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_61_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_61_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_160_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_160_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_62_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_62_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_161_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_161_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_63_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_63_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_162_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_162_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_64_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_64_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_163_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_163_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_65_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_65_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_164_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_164_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_66_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_66_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_165_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_165_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_67_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_67_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_166_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_166_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_68_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_68_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_167_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_167_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_69_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_69_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_168_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_168_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_70_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_70_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_169_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_169_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_71_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_71_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_170_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_170_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_72_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_72_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_171_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_171_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_73_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_73_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_172_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_172_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_74_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_74_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_173_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_173_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_75_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_75_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_174_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_174_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_76_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_76_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_175_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_175_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_77_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_77_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_176_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_176_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_78_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_78_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_177_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_177_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_79_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_79_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_178_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_178_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_80_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_80_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_179_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_179_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_81_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_81_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_180_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_180_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_82_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_82_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_181_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_181_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_83_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_83_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_182_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_182_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_84_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_84_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_183_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_183_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_85_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_85_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_184_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_184_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_86_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_86_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_185_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_185_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_87_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_87_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_186_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_186_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_88_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_88_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_187_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_187_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_89_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_89_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_188_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_188_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_90_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_90_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_189_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_189_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_91_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_91_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_190_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_190_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_92_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_92_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_191_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_191_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_93_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_93_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_192_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_192_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_94_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_94_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_193_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_193_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_95_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_95_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_194_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_194_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_96_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_96_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_195_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_195_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_97_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_97_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_196_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_196_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_98_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_98_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="post_loc_channel_U" SOURCE="" URAM="0" VARIABLE="post_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_99_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_99_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_100_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_100_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_101_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_101_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_102_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_102_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_103_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_103_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_104_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_104_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_105_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_105_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_106_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_106_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_107_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_107_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_108_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_108_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_109_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_109_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_110_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_110_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_111_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_111_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_112_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_112_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_113_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_113_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_114_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_114_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_115_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_115_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_116_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_116_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_117_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_117_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_118_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_118_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_119_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_119_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_120_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_120_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_121_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_121_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_122_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_122_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_123_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_123_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_124_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_124_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_125_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_125_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_126_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_126_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_127_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_127_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_128_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_128_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_129_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_129_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_130_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_130_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_131_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_131_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_132_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_132_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_133_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_133_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_134_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_134_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_135_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_135_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_136_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_136_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_137_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_137_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_138_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_138_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_139_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_139_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_140_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_140_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_141_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_141_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_142_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_142_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_143_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_143_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_144_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_144_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_145_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_145_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_146_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_146_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_147_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_147_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_148_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_148_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_149_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_149_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_150_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_150_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_151_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_151_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_152_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_152_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_153_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_153_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_154_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_154_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_155_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_155_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_156_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_156_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_157_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_157_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_158_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_158_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_159_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_159_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_160_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_160_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_161_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_161_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_162_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_162_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_163_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_163_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_164_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_164_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_165_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_165_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_166_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_166_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_167_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_167_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_168_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_168_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_169_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_169_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_170_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_170_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_171_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_171_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_172_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_172_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_173_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_173_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_174_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_174_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_175_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_175_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_176_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_176_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_177_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_177_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_178_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_178_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_179_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_179_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_180_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_180_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_181_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_181_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_182_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_182_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_183_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_183_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_184_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_184_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_185_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_185_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_186_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_186_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_187_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_187_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_188_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_188_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_189_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_189_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_190_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_190_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_191_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_191_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_192_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_192_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_193_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_193_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_194_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_194_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_195_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_195_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_196_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_196_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_197_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_197_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="arr_198_loc_channel_U" SOURCE="" URAM="0" VARIABLE="arr_198_loc_channel"/>
+            </BindNodes>
         </Module>
     </ModuleInformation>
     <FIFOInformation/>
@@ -878,17 +1181,21 @@
         <Pragma type="interface" location="topk_sort/topk_sort.cpp:9" status="valid" parentFunction="topk_sort" variable="return" isDirective="0" options="s_axilite port=return bundle=CONTROL_BUS"/>
         <Pragma type="interface" location="topk_sort/topk_sort.cpp:10" status="valid" parentFunction="topk_sort" variable="istrm" isDirective="0" options="axis port=istrm"/>
         <Pragma type="interface" location="topk_sort/topk_sort.cpp:11" status="valid" parentFunction="topk_sort" variable="ostrm" isDirective="0" options="axis port=ostrm"/>
-        <Pragma type="array_partition" location="topk_sort/topk_sort.cpp:16" status="valid" parentFunction="topk_sort" variable="arr" isDirective="0" options="variable=arr complete dim=0"/>
-        <Pragma type="array_partition" location="topk_sort/topk_sort.cpp:17" status="valid" parentFunction="topk_sort" variable="post" isDirective="0" options="variable=post complete dim=0"/>
-        <Pragma type="array_partition" location="topk_sort/topk_sort.cpp:18" status="valid" parentFunction="topk_sort" variable="reserve" isDirective="0" options="variable=reserve complete dim=0"/>
-        <Pragma type="unroll" location="topk_sort/topk_sort.cpp:23" status="valid" parentFunction="topk_sort" variable="" isDirective="0" options=""/>
-        <Pragma type="pipeline" location="topk_sort/topk_sort.cpp:34" status="valid" parentFunction="topk_sort" variable="" isDirective="0" options="II=1"/>
-        <Pragma type="unroll" location="topk_sort/topk_sort.cpp:41" status="valid" parentFunction="topk_sort" variable="" isDirective="0" options=""/>
-        <Pragma type="unroll" location="topk_sort/topk_sort.cpp:60" status="valid" parentFunction="topk_sort" variable="" isDirective="0" options=""/>
-        <Pragma type="pipeline" location="topk_sort/topk_sort.cpp:67" status="valid" parentFunction="topk_sort" variable="" isDirective="0" options="II=1"/>
-        <Pragma type="unroll" location="topk_sort/topk_sort.cpp:69" status="valid" parentFunction="topk_sort" variable="" isDirective="0" options=""/>
-        <Pragma type="unroll" location="topk_sort/topk_sort.cpp:80" status="valid" parentFunction="topk_sort" variable="" isDirective="0" options=""/>
-        <Pragma type="pipeline" location="topk_sort/topk_sort.cpp:89" status="valid" parentFunction="topk_sort" variable="" isDirective="0" options="II=1"/>
+        <Pragma type="dataflow" location="topk_sort/topk_sort.cpp:13" status="warning" parentFunction="topk_sort" variable="" isDirective="0" options="">
+            <Msg msg_id="214-114" msg_severity="WARNING" msg_body="Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region"/>
+            <Msg msg_id="214-169" msg_severity="WARNING" msg_body="There are a total of 4 such instances of non-canonical statements in the dataflow region"/>
+        </Pragma>
+        <Pragma type="array_partition" location="topk_sort/topk_sort.cpp:18" status="valid" parentFunction="topk_sort" variable="arr" isDirective="0" options="variable=arr complete dim=0"/>
+        <Pragma type="array_partition" location="topk_sort/topk_sort.cpp:19" status="valid" parentFunction="topk_sort" variable="post" isDirective="0" options="variable=post complete dim=0"/>
+        <Pragma type="array_partition" location="topk_sort/topk_sort.cpp:20" status="valid" parentFunction="topk_sort" variable="reserve" isDirective="0" options="variable=reserve complete dim=0"/>
+        <Pragma type="unroll" location="topk_sort/topk_sort.cpp:25" status="valid" parentFunction="topk_sort" variable="" isDirective="0" options=""/>
+        <Pragma type="pipeline" location="topk_sort/topk_sort.cpp:36" status="valid" parentFunction="topk_sort" variable="" isDirective="0" options="II=1"/>
+        <Pragma type="unroll" location="topk_sort/topk_sort.cpp:43" status="valid" parentFunction="topk_sort" variable="" isDirective="0" options=""/>
+        <Pragma type="unroll" location="topk_sort/topk_sort.cpp:62" status="valid" parentFunction="topk_sort" variable="" isDirective="0" options=""/>
+        <Pragma type="pipeline" location="topk_sort/topk_sort.cpp:69" status="valid" parentFunction="topk_sort" variable="" isDirective="0" options="II=1"/>
+        <Pragma type="unroll" location="topk_sort/topk_sort.cpp:71" status="valid" parentFunction="topk_sort" variable="" isDirective="0" options=""/>
+        <Pragma type="unroll" location="topk_sort/topk_sort.cpp:82" status="valid" parentFunction="topk_sort" variable="" isDirective="0" options=""/>
+        <Pragma type="pipeline" location="topk_sort/topk_sort.cpp:91" status="valid" parentFunction="topk_sort" variable="" isDirective="0" options="II=1"/>
     </PragmaReport>
 </profile>
 

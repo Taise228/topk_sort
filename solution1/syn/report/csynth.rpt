@@ -4,7 +4,7 @@
 == Synthesis Summary Report of 'topk_sort'
 ================================================================
 + General Information: 
-    * Date:           Sun Jul 21 12:41:25 2024
+    * Date:           Sun Jul 21 15:04:43 2024
     * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
     * Project:        topk_sort
     * Solution:       solution1 (Vivado IP Flow Target)
@@ -15,18 +15,18 @@
 + Performance & Resource Estimates: 
     
     PS: '+' for module; 'o' for loop; '*' for dataflow
-    +---------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----+------------+-------------+-----+
-    |                Modules                | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |      |    |            |             |     |
-    |                & Loops                | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined| BRAM | DSP|     FF     |     LUT     | URAM|
-    +---------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----+------------+-------------+-----+
-    |+ topk_sort                            |     -|  4.83|     1212|  1.212e+04|         -|     1213|     -|        no|     -|   -|  12785 (5%)|  28257 (24%)|    -|
-    | + topk_sort_Pipeline_VITIS_LOOP_33_2  |     -|  5.43|     1002|  1.002e+04|         -|     1002|     -|        no|     -|   -|   6381 (2%)|   10229 (8%)|    -|
-    |  o VITIS_LOOP_33_2                    |     -|  7.30|     1000|  1.000e+04|         1|        1|  1000|       yes|     -|   -|           -|            -|    -|
-    | + topk_sort_Pipeline_VITIS_LOOP_66_5  |     -|  4.83|      101|  1.010e+03|         -|      101|     -|        no|     -|   -|   6314 (2%)|  17346 (14%)|    -|
-    |  o VITIS_LOOP_66_5                    |     -|  7.30|       99|    990.000|         1|        1|    99|       yes|     -|   -|           -|            -|    -|
-    | + topk_sort_Pipeline_VITIS_LOOP_88_8  |     -|  6.06|      102|  1.020e+03|         -|      102|     -|        no|     -|   -|    43 (~0%)|    582 (~0%)|    -|
-    |  o VITIS_LOOP_88_8                    |     -|  7.30|      100|  1.000e+03|         2|        1|   100|       yes|     -|   -|           -|            -|    -|
-    +---------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----+------------+-------------+-----+
+    +-------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----+-------------+-------------+-----+
+    |            Modules            | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |      |    |             |             |     |
+    |            & Loops            | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined| BRAM | DSP|      FF     |     LUT     | URAM|
+    +-------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----+-------------+-------------+-----+
+    |+ topk_sort*                   |     -|  2.02|     1208|  1.208e+04|         -|     1003|     -|  dataflow|     -|   -|  52110 (22%)|  60981 (52%)|    -|
+    | + Loop_VITIS_LOOP_35_2_proc3  |     -|  5.43|     1002|  1.002e+04|         -|     1002|     -|        no|     -|   -|   12748 (5%)|  15600 (13%)|    -|
+    |  o VITIS_LOOP_35_2            |     -|  7.30|     1000|  1.000e+04|         1|        1|  1000|       yes|     -|   -|            -|            -|    -|
+    | + Loop_VITIS_LOOP_68_5_proc   |     -|  3.59|      101|  1.010e+03|         -|      101|     -|        no|     -|   -|    9481 (4%)|  20903 (17%)|    -|
+    |  o VITIS_LOOP_68_5            |     -|  7.30|       99|    990.000|         1|        1|    99|       yes|     -|   -|            -|            -|    -|
+    | + Loop_VITIS_LOOP_90_8_proc   |     -|  4.28|      103|  1.030e+03|         -|      103|     -|        no|     -|   -|     45 (~0%)|    588 (~0%)|    -|
+    |  o VITIS_LOOP_90_8            |     -|  7.30|      101|  1.010e+03|         3|        1|   100|       yes|     -|   -|            -|            -|    -|
+    +-------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----+-------------+-------------+-----+
 
 
 ================================================================
@@ -98,17 +98,315 @@
 ================================================================
 == Bind Op Report
 ================================================================
-+---------------------------------------+-----+--------+----------+-----+--------+---------+
-| Name                                  | DSP | Pragma | Variable | Op  | Impl   | Latency |
-+---------------------------------------+-----+--------+----------+-----+--------+---------+
-| + topk_sort                           | 0   |        |          |     |        |         |
-|  + topk_sort_Pipeline_VITIS_LOOP_33_2 | 0   |        |          |     |        |         |
-|    i_5_fu_3654_p2                     | -   |        | i_5      | add | fabric | 0       |
-|  + topk_sort_Pipeline_VITIS_LOOP_66_5 | 0   |        |          |     |        |         |
-|    i_3_fu_4506_p2                     | -   |        | i_3      | add | fabric | 0       |
-|  + topk_sort_Pipeline_VITIS_LOOP_88_8 | 0   |        |          |     |        |         |
-|    add_ln88_fu_884_p2                 | -   |        | add_ln88 | add | fabric | 0       |
-+---------------------------------------+-----+--------+----------+-----+--------+---------+
++-------------------------------+-----+--------+----------------------+------+--------+---------+
+| Name                          | DSP | Pragma | Variable             | Op   | Impl   | Latency |
++-------------------------------+-----+--------+----------------------+------+--------+---------+
+| + topk_sort                   | 0   |        |                      |      |        |         |
+|   arr_loc_channel_U           | -   |        | arr_loc_channel      | fifo | srl    | 0       |
+|   post_99_loc_channel_U       | -   |        | post_99_loc_channel  | fifo | srl    | 0       |
+|   arr_1_loc_channel_U         | -   |        | arr_1_loc_channel    | fifo | srl    | 0       |
+|   post_100_loc_channel_U      | -   |        | post_100_loc_channel | fifo | srl    | 0       |
+|   arr_2_loc_channel_U         | -   |        | arr_2_loc_channel    | fifo | srl    | 0       |
+|   post_101_loc_channel_U      | -   |        | post_101_loc_channel | fifo | srl    | 0       |
+|   arr_3_loc_channel_U         | -   |        | arr_3_loc_channel    | fifo | srl    | 0       |
+|   post_102_loc_channel_U      | -   |        | post_102_loc_channel | fifo | srl    | 0       |
+|   arr_4_loc_channel_U         | -   |        | arr_4_loc_channel    | fifo | srl    | 0       |
+|   post_103_loc_channel_U      | -   |        | post_103_loc_channel | fifo | srl    | 0       |
+|   arr_5_loc_channel_U         | -   |        | arr_5_loc_channel    | fifo | srl    | 0       |
+|   post_104_loc_channel_U      | -   |        | post_104_loc_channel | fifo | srl    | 0       |
+|   arr_6_loc_channel_U         | -   |        | arr_6_loc_channel    | fifo | srl    | 0       |
+|   post_105_loc_channel_U      | -   |        | post_105_loc_channel | fifo | srl    | 0       |
+|   arr_7_loc_channel_U         | -   |        | arr_7_loc_channel    | fifo | srl    | 0       |
+|   post_106_loc_channel_U      | -   |        | post_106_loc_channel | fifo | srl    | 0       |
+|   arr_8_loc_channel_U         | -   |        | arr_8_loc_channel    | fifo | srl    | 0       |
+|   post_107_loc_channel_U      | -   |        | post_107_loc_channel | fifo | srl    | 0       |
+|   arr_9_loc_channel_U         | -   |        | arr_9_loc_channel    | fifo | srl    | 0       |
+|   post_108_loc_channel_U      | -   |        | post_108_loc_channel | fifo | srl    | 0       |
+|   arr_10_loc_channel_U        | -   |        | arr_10_loc_channel   | fifo | srl    | 0       |
+|   post_109_loc_channel_U      | -   |        | post_109_loc_channel | fifo | srl    | 0       |
+|   arr_11_loc_channel_U        | -   |        | arr_11_loc_channel   | fifo | srl    | 0       |
+|   post_110_loc_channel_U      | -   |        | post_110_loc_channel | fifo | srl    | 0       |
+|   arr_12_loc_channel_U        | -   |        | arr_12_loc_channel   | fifo | srl    | 0       |
+|   post_111_loc_channel_U      | -   |        | post_111_loc_channel | fifo | srl    | 0       |
+|   arr_13_loc_channel_U        | -   |        | arr_13_loc_channel   | fifo | srl    | 0       |
+|   post_112_loc_channel_U      | -   |        | post_112_loc_channel | fifo | srl    | 0       |
+|   arr_14_loc_channel_U        | -   |        | arr_14_loc_channel   | fifo | srl    | 0       |
+|   post_113_loc_channel_U      | -   |        | post_113_loc_channel | fifo | srl    | 0       |
+|   arr_15_loc_channel_U        | -   |        | arr_15_loc_channel   | fifo | srl    | 0       |
+|   post_114_loc_channel_U      | -   |        | post_114_loc_channel | fifo | srl    | 0       |
+|   arr_16_loc_channel_U        | -   |        | arr_16_loc_channel   | fifo | srl    | 0       |
+|   post_115_loc_channel_U      | -   |        | post_115_loc_channel | fifo | srl    | 0       |
+|   arr_17_loc_channel_U        | -   |        | arr_17_loc_channel   | fifo | srl    | 0       |
+|   post_116_loc_channel_U      | -   |        | post_116_loc_channel | fifo | srl    | 0       |
+|   arr_18_loc_channel_U        | -   |        | arr_18_loc_channel   | fifo | srl    | 0       |
+|   post_117_loc_channel_U      | -   |        | post_117_loc_channel | fifo | srl    | 0       |
+|   arr_19_loc_channel_U        | -   |        | arr_19_loc_channel   | fifo | srl    | 0       |
+|   post_118_loc_channel_U      | -   |        | post_118_loc_channel | fifo | srl    | 0       |
+|   arr_20_loc_channel_U        | -   |        | arr_20_loc_channel   | fifo | srl    | 0       |
+|   post_119_loc_channel_U      | -   |        | post_119_loc_channel | fifo | srl    | 0       |
+|   arr_21_loc_channel_U        | -   |        | arr_21_loc_channel   | fifo | srl    | 0       |
+|   post_120_loc_channel_U      | -   |        | post_120_loc_channel | fifo | srl    | 0       |
+|   arr_22_loc_channel_U        | -   |        | arr_22_loc_channel   | fifo | srl    | 0       |
+|   post_121_loc_channel_U      | -   |        | post_121_loc_channel | fifo | srl    | 0       |
+|   arr_23_loc_channel_U        | -   |        | arr_23_loc_channel   | fifo | srl    | 0       |
+|   post_122_loc_channel_U      | -   |        | post_122_loc_channel | fifo | srl    | 0       |
+|   arr_24_loc_channel_U        | -   |        | arr_24_loc_channel   | fifo | srl    | 0       |
+|   post_123_loc_channel_U      | -   |        | post_123_loc_channel | fifo | srl    | 0       |
+|   arr_25_loc_channel_U        | -   |        | arr_25_loc_channel   | fifo | srl    | 0       |
+|   post_124_loc_channel_U      | -   |        | post_124_loc_channel | fifo | srl    | 0       |
+|   arr_26_loc_channel_U        | -   |        | arr_26_loc_channel   | fifo | srl    | 0       |
+|   post_125_loc_channel_U      | -   |        | post_125_loc_channel | fifo | srl    | 0       |
+|   arr_27_loc_channel_U        | -   |        | arr_27_loc_channel   | fifo | srl    | 0       |
+|   post_126_loc_channel_U      | -   |        | post_126_loc_channel | fifo | srl    | 0       |
+|   arr_28_loc_channel_U        | -   |        | arr_28_loc_channel   | fifo | srl    | 0       |
+|   post_127_loc_channel_U      | -   |        | post_127_loc_channel | fifo | srl    | 0       |
+|   arr_29_loc_channel_U        | -   |        | arr_29_loc_channel   | fifo | srl    | 0       |
+|   post_128_loc_channel_U      | -   |        | post_128_loc_channel | fifo | srl    | 0       |
+|   arr_30_loc_channel_U        | -   |        | arr_30_loc_channel   | fifo | srl    | 0       |
+|   post_129_loc_channel_U      | -   |        | post_129_loc_channel | fifo | srl    | 0       |
+|   arr_31_loc_channel_U        | -   |        | arr_31_loc_channel   | fifo | srl    | 0       |
+|   post_130_loc_channel_U      | -   |        | post_130_loc_channel | fifo | srl    | 0       |
+|   arr_32_loc_channel_U        | -   |        | arr_32_loc_channel   | fifo | srl    | 0       |
+|   post_131_loc_channel_U      | -   |        | post_131_loc_channel | fifo | srl    | 0       |
+|   arr_33_loc_channel_U        | -   |        | arr_33_loc_channel   | fifo | srl    | 0       |
+|   post_132_loc_channel_U      | -   |        | post_132_loc_channel | fifo | srl    | 0       |
+|   arr_34_loc_channel_U        | -   |        | arr_34_loc_channel   | fifo | srl    | 0       |
+|   post_133_loc_channel_U      | -   |        | post_133_loc_channel | fifo | srl    | 0       |
+|   arr_35_loc_channel_U        | -   |        | arr_35_loc_channel   | fifo | srl    | 0       |
+|   post_134_loc_channel_U      | -   |        | post_134_loc_channel | fifo | srl    | 0       |
+|   arr_36_loc_channel_U        | -   |        | arr_36_loc_channel   | fifo | srl    | 0       |
+|   post_135_loc_channel_U      | -   |        | post_135_loc_channel | fifo | srl    | 0       |
+|   arr_37_loc_channel_U        | -   |        | arr_37_loc_channel   | fifo | srl    | 0       |
+|   post_136_loc_channel_U      | -   |        | post_136_loc_channel | fifo | srl    | 0       |
+|   arr_38_loc_channel_U        | -   |        | arr_38_loc_channel   | fifo | srl    | 0       |
+|   post_137_loc_channel_U      | -   |        | post_137_loc_channel | fifo | srl    | 0       |
+|   arr_39_loc_channel_U        | -   |        | arr_39_loc_channel   | fifo | srl    | 0       |
+|   post_138_loc_channel_U      | -   |        | post_138_loc_channel | fifo | srl    | 0       |
+|   arr_40_loc_channel_U        | -   |        | arr_40_loc_channel   | fifo | srl    | 0       |
+|   post_139_loc_channel_U      | -   |        | post_139_loc_channel | fifo | srl    | 0       |
+|   arr_41_loc_channel_U        | -   |        | arr_41_loc_channel   | fifo | srl    | 0       |
+|   post_140_loc_channel_U      | -   |        | post_140_loc_channel | fifo | srl    | 0       |
+|   arr_42_loc_channel_U        | -   |        | arr_42_loc_channel   | fifo | srl    | 0       |
+|   post_141_loc_channel_U      | -   |        | post_141_loc_channel | fifo | srl    | 0       |
+|   arr_43_loc_channel_U        | -   |        | arr_43_loc_channel   | fifo | srl    | 0       |
+|   post_142_loc_channel_U      | -   |        | post_142_loc_channel | fifo | srl    | 0       |
+|   arr_44_loc_channel_U        | -   |        | arr_44_loc_channel   | fifo | srl    | 0       |
+|   post_143_loc_channel_U      | -   |        | post_143_loc_channel | fifo | srl    | 0       |
+|   arr_45_loc_channel_U        | -   |        | arr_45_loc_channel   | fifo | srl    | 0       |
+|   post_144_loc_channel_U      | -   |        | post_144_loc_channel | fifo | srl    | 0       |
+|   arr_46_loc_channel_U        | -   |        | arr_46_loc_channel   | fifo | srl    | 0       |
+|   post_145_loc_channel_U      | -   |        | post_145_loc_channel | fifo | srl    | 0       |
+|   arr_47_loc_channel_U        | -   |        | arr_47_loc_channel   | fifo | srl    | 0       |
+|   post_146_loc_channel_U      | -   |        | post_146_loc_channel | fifo | srl    | 0       |
+|   arr_48_loc_channel_U        | -   |        | arr_48_loc_channel   | fifo | srl    | 0       |
+|   post_147_loc_channel_U      | -   |        | post_147_loc_channel | fifo | srl    | 0       |
+|   arr_49_loc_channel_U        | -   |        | arr_49_loc_channel   | fifo | srl    | 0       |
+|   post_148_loc_channel_U      | -   |        | post_148_loc_channel | fifo | srl    | 0       |
+|   arr_50_loc_channel_U        | -   |        | arr_50_loc_channel   | fifo | srl    | 0       |
+|   post_149_loc_channel_U      | -   |        | post_149_loc_channel | fifo | srl    | 0       |
+|   arr_51_loc_channel_U        | -   |        | arr_51_loc_channel   | fifo | srl    | 0       |
+|   post_150_loc_channel_U      | -   |        | post_150_loc_channel | fifo | srl    | 0       |
+|   arr_52_loc_channel_U        | -   |        | arr_52_loc_channel   | fifo | srl    | 0       |
+|   post_151_loc_channel_U      | -   |        | post_151_loc_channel | fifo | srl    | 0       |
+|   arr_53_loc_channel_U        | -   |        | arr_53_loc_channel   | fifo | srl    | 0       |
+|   post_152_loc_channel_U      | -   |        | post_152_loc_channel | fifo | srl    | 0       |
+|   arr_54_loc_channel_U        | -   |        | arr_54_loc_channel   | fifo | srl    | 0       |
+|   post_153_loc_channel_U      | -   |        | post_153_loc_channel | fifo | srl    | 0       |
+|   arr_55_loc_channel_U        | -   |        | arr_55_loc_channel   | fifo | srl    | 0       |
+|   post_154_loc_channel_U      | -   |        | post_154_loc_channel | fifo | srl    | 0       |
+|   arr_56_loc_channel_U        | -   |        | arr_56_loc_channel   | fifo | srl    | 0       |
+|   post_155_loc_channel_U      | -   |        | post_155_loc_channel | fifo | srl    | 0       |
+|   arr_57_loc_channel_U        | -   |        | arr_57_loc_channel   | fifo | srl    | 0       |
+|   post_156_loc_channel_U      | -   |        | post_156_loc_channel | fifo | srl    | 0       |
+|   arr_58_loc_channel_U        | -   |        | arr_58_loc_channel   | fifo | srl    | 0       |
+|   post_157_loc_channel_U      | -   |        | post_157_loc_channel | fifo | srl    | 0       |
+|   arr_59_loc_channel_U        | -   |        | arr_59_loc_channel   | fifo | srl    | 0       |
+|   post_158_loc_channel_U      | -   |        | post_158_loc_channel | fifo | srl    | 0       |
+|   arr_60_loc_channel_U        | -   |        | arr_60_loc_channel   | fifo | srl    | 0       |
+|   post_159_loc_channel_U      | -   |        | post_159_loc_channel | fifo | srl    | 0       |
+|   arr_61_loc_channel_U        | -   |        | arr_61_loc_channel   | fifo | srl    | 0       |
+|   post_160_loc_channel_U      | -   |        | post_160_loc_channel | fifo | srl    | 0       |
+|   arr_62_loc_channel_U        | -   |        | arr_62_loc_channel   | fifo | srl    | 0       |
+|   post_161_loc_channel_U      | -   |        | post_161_loc_channel | fifo | srl    | 0       |
+|   arr_63_loc_channel_U        | -   |        | arr_63_loc_channel   | fifo | srl    | 0       |
+|   post_162_loc_channel_U      | -   |        | post_162_loc_channel | fifo | srl    | 0       |
+|   arr_64_loc_channel_U        | -   |        | arr_64_loc_channel   | fifo | srl    | 0       |
+|   post_163_loc_channel_U      | -   |        | post_163_loc_channel | fifo | srl    | 0       |
+|   arr_65_loc_channel_U        | -   |        | arr_65_loc_channel   | fifo | srl    | 0       |
+|   post_164_loc_channel_U      | -   |        | post_164_loc_channel | fifo | srl    | 0       |
+|   arr_66_loc_channel_U        | -   |        | arr_66_loc_channel   | fifo | srl    | 0       |
+|   post_165_loc_channel_U      | -   |        | post_165_loc_channel | fifo | srl    | 0       |
+|   arr_67_loc_channel_U        | -   |        | arr_67_loc_channel   | fifo | srl    | 0       |
+|   post_166_loc_channel_U      | -   |        | post_166_loc_channel | fifo | srl    | 0       |
+|   arr_68_loc_channel_U        | -   |        | arr_68_loc_channel   | fifo | srl    | 0       |
+|   post_167_loc_channel_U      | -   |        | post_167_loc_channel | fifo | srl    | 0       |
+|   arr_69_loc_channel_U        | -   |        | arr_69_loc_channel   | fifo | srl    | 0       |
+|   post_168_loc_channel_U      | -   |        | post_168_loc_channel | fifo | srl    | 0       |
+|   arr_70_loc_channel_U        | -   |        | arr_70_loc_channel   | fifo | srl    | 0       |
+|   post_169_loc_channel_U      | -   |        | post_169_loc_channel | fifo | srl    | 0       |
+|   arr_71_loc_channel_U        | -   |        | arr_71_loc_channel   | fifo | srl    | 0       |
+|   post_170_loc_channel_U      | -   |        | post_170_loc_channel | fifo | srl    | 0       |
+|   arr_72_loc_channel_U        | -   |        | arr_72_loc_channel   | fifo | srl    | 0       |
+|   post_171_loc_channel_U      | -   |        | post_171_loc_channel | fifo | srl    | 0       |
+|   arr_73_loc_channel_U        | -   |        | arr_73_loc_channel   | fifo | srl    | 0       |
+|   post_172_loc_channel_U      | -   |        | post_172_loc_channel | fifo | srl    | 0       |
+|   arr_74_loc_channel_U        | -   |        | arr_74_loc_channel   | fifo | srl    | 0       |
+|   post_173_loc_channel_U      | -   |        | post_173_loc_channel | fifo | srl    | 0       |
+|   arr_75_loc_channel_U        | -   |        | arr_75_loc_channel   | fifo | srl    | 0       |
+|   post_174_loc_channel_U      | -   |        | post_174_loc_channel | fifo | srl    | 0       |
+|   arr_76_loc_channel_U        | -   |        | arr_76_loc_channel   | fifo | srl    | 0       |
+|   post_175_loc_channel_U      | -   |        | post_175_loc_channel | fifo | srl    | 0       |
+|   arr_77_loc_channel_U        | -   |        | arr_77_loc_channel   | fifo | srl    | 0       |
+|   post_176_loc_channel_U      | -   |        | post_176_loc_channel | fifo | srl    | 0       |
+|   arr_78_loc_channel_U        | -   |        | arr_78_loc_channel   | fifo | srl    | 0       |
+|   post_177_loc_channel_U      | -   |        | post_177_loc_channel | fifo | srl    | 0       |
+|   arr_79_loc_channel_U        | -   |        | arr_79_loc_channel   | fifo | srl    | 0       |
+|   post_178_loc_channel_U      | -   |        | post_178_loc_channel | fifo | srl    | 0       |
+|   arr_80_loc_channel_U        | -   |        | arr_80_loc_channel   | fifo | srl    | 0       |
+|   post_179_loc_channel_U      | -   |        | post_179_loc_channel | fifo | srl    | 0       |
+|   arr_81_loc_channel_U        | -   |        | arr_81_loc_channel   | fifo | srl    | 0       |
+|   post_180_loc_channel_U      | -   |        | post_180_loc_channel | fifo | srl    | 0       |
+|   arr_82_loc_channel_U        | -   |        | arr_82_loc_channel   | fifo | srl    | 0       |
+|   post_181_loc_channel_U      | -   |        | post_181_loc_channel | fifo | srl    | 0       |
+|   arr_83_loc_channel_U        | -   |        | arr_83_loc_channel   | fifo | srl    | 0       |
+|   post_182_loc_channel_U      | -   |        | post_182_loc_channel | fifo | srl    | 0       |
+|   arr_84_loc_channel_U        | -   |        | arr_84_loc_channel   | fifo | srl    | 0       |
+|   post_183_loc_channel_U      | -   |        | post_183_loc_channel | fifo | srl    | 0       |
+|   arr_85_loc_channel_U        | -   |        | arr_85_loc_channel   | fifo | srl    | 0       |
+|   post_184_loc_channel_U      | -   |        | post_184_loc_channel | fifo | srl    | 0       |
+|   arr_86_loc_channel_U        | -   |        | arr_86_loc_channel   | fifo | srl    | 0       |
+|   post_185_loc_channel_U      | -   |        | post_185_loc_channel | fifo | srl    | 0       |
+|   arr_87_loc_channel_U        | -   |        | arr_87_loc_channel   | fifo | srl    | 0       |
+|   post_186_loc_channel_U      | -   |        | post_186_loc_channel | fifo | srl    | 0       |
+|   arr_88_loc_channel_U        | -   |        | arr_88_loc_channel   | fifo | srl    | 0       |
+|   post_187_loc_channel_U      | -   |        | post_187_loc_channel | fifo | srl    | 0       |
+|   arr_89_loc_channel_U        | -   |        | arr_89_loc_channel   | fifo | srl    | 0       |
+|   post_188_loc_channel_U      | -   |        | post_188_loc_channel | fifo | srl    | 0       |
+|   arr_90_loc_channel_U        | -   |        | arr_90_loc_channel   | fifo | srl    | 0       |
+|   post_189_loc_channel_U      | -   |        | post_189_loc_channel | fifo | srl    | 0       |
+|   arr_91_loc_channel_U        | -   |        | arr_91_loc_channel   | fifo | srl    | 0       |
+|   post_190_loc_channel_U      | -   |        | post_190_loc_channel | fifo | srl    | 0       |
+|   arr_92_loc_channel_U        | -   |        | arr_92_loc_channel   | fifo | srl    | 0       |
+|   post_191_loc_channel_U      | -   |        | post_191_loc_channel | fifo | srl    | 0       |
+|   arr_93_loc_channel_U        | -   |        | arr_93_loc_channel   | fifo | srl    | 0       |
+|   post_192_loc_channel_U      | -   |        | post_192_loc_channel | fifo | srl    | 0       |
+|   arr_94_loc_channel_U        | -   |        | arr_94_loc_channel   | fifo | srl    | 0       |
+|   post_193_loc_channel_U      | -   |        | post_193_loc_channel | fifo | srl    | 0       |
+|   arr_95_loc_channel_U        | -   |        | arr_95_loc_channel   | fifo | srl    | 0       |
+|   post_194_loc_channel_U      | -   |        | post_194_loc_channel | fifo | srl    | 0       |
+|   arr_96_loc_channel_U        | -   |        | arr_96_loc_channel   | fifo | srl    | 0       |
+|   post_195_loc_channel_U      | -   |        | post_195_loc_channel | fifo | srl    | 0       |
+|   arr_97_loc_channel_U        | -   |        | arr_97_loc_channel   | fifo | srl    | 0       |
+|   post_196_loc_channel_U      | -   |        | post_196_loc_channel | fifo | srl    | 0       |
+|   arr_98_loc_channel_U        | -   |        | arr_98_loc_channel   | fifo | srl    | 0       |
+|   post_loc_channel_U          | -   |        | post_loc_channel     | fifo | srl    | 0       |
+|   arr_99_loc_channel_U        | -   |        | arr_99_loc_channel   | fifo | srl    | 0       |
+|   arr_100_loc_channel_U       | -   |        | arr_100_loc_channel  | fifo | srl    | 0       |
+|   arr_101_loc_channel_U       | -   |        | arr_101_loc_channel  | fifo | srl    | 0       |
+|   arr_102_loc_channel_U       | -   |        | arr_102_loc_channel  | fifo | srl    | 0       |
+|   arr_103_loc_channel_U       | -   |        | arr_103_loc_channel  | fifo | srl    | 0       |
+|   arr_104_loc_channel_U       | -   |        | arr_104_loc_channel  | fifo | srl    | 0       |
+|   arr_105_loc_channel_U       | -   |        | arr_105_loc_channel  | fifo | srl    | 0       |
+|   arr_106_loc_channel_U       | -   |        | arr_106_loc_channel  | fifo | srl    | 0       |
+|   arr_107_loc_channel_U       | -   |        | arr_107_loc_channel  | fifo | srl    | 0       |
+|   arr_108_loc_channel_U       | -   |        | arr_108_loc_channel  | fifo | srl    | 0       |
+|   arr_109_loc_channel_U       | -   |        | arr_109_loc_channel  | fifo | srl    | 0       |
+|   arr_110_loc_channel_U       | -   |        | arr_110_loc_channel  | fifo | srl    | 0       |
+|   arr_111_loc_channel_U       | -   |        | arr_111_loc_channel  | fifo | srl    | 0       |
+|   arr_112_loc_channel_U       | -   |        | arr_112_loc_channel  | fifo | srl    | 0       |
+|   arr_113_loc_channel_U       | -   |        | arr_113_loc_channel  | fifo | srl    | 0       |
+|   arr_114_loc_channel_U       | -   |        | arr_114_loc_channel  | fifo | srl    | 0       |
+|   arr_115_loc_channel_U       | -   |        | arr_115_loc_channel  | fifo | srl    | 0       |
+|   arr_116_loc_channel_U       | -   |        | arr_116_loc_channel  | fifo | srl    | 0       |
+|   arr_117_loc_channel_U       | -   |        | arr_117_loc_channel  | fifo | srl    | 0       |
+|   arr_118_loc_channel_U       | -   |        | arr_118_loc_channel  | fifo | srl    | 0       |
+|   arr_119_loc_channel_U       | -   |        | arr_119_loc_channel  | fifo | srl    | 0       |
+|   arr_120_loc_channel_U       | -   |        | arr_120_loc_channel  | fifo | srl    | 0       |
+|   arr_121_loc_channel_U       | -   |        | arr_121_loc_channel  | fifo | srl    | 0       |
+|   arr_122_loc_channel_U       | -   |        | arr_122_loc_channel  | fifo | srl    | 0       |
+|   arr_123_loc_channel_U       | -   |        | arr_123_loc_channel  | fifo | srl    | 0       |
+|   arr_124_loc_channel_U       | -   |        | arr_124_loc_channel  | fifo | srl    | 0       |
+|   arr_125_loc_channel_U       | -   |        | arr_125_loc_channel  | fifo | srl    | 0       |
+|   arr_126_loc_channel_U       | -   |        | arr_126_loc_channel  | fifo | srl    | 0       |
+|   arr_127_loc_channel_U       | -   |        | arr_127_loc_channel  | fifo | srl    | 0       |
+|   arr_128_loc_channel_U       | -   |        | arr_128_loc_channel  | fifo | srl    | 0       |
+|   arr_129_loc_channel_U       | -   |        | arr_129_loc_channel  | fifo | srl    | 0       |
+|   arr_130_loc_channel_U       | -   |        | arr_130_loc_channel  | fifo | srl    | 0       |
+|   arr_131_loc_channel_U       | -   |        | arr_131_loc_channel  | fifo | srl    | 0       |
+|   arr_132_loc_channel_U       | -   |        | arr_132_loc_channel  | fifo | srl    | 0       |
+|   arr_133_loc_channel_U       | -   |        | arr_133_loc_channel  | fifo | srl    | 0       |
+|   arr_134_loc_channel_U       | -   |        | arr_134_loc_channel  | fifo | srl    | 0       |
+|   arr_135_loc_channel_U       | -   |        | arr_135_loc_channel  | fifo | srl    | 0       |
+|   arr_136_loc_channel_U       | -   |        | arr_136_loc_channel  | fifo | srl    | 0       |
+|   arr_137_loc_channel_U       | -   |        | arr_137_loc_channel  | fifo | srl    | 0       |
+|   arr_138_loc_channel_U       | -   |        | arr_138_loc_channel  | fifo | srl    | 0       |
+|   arr_139_loc_channel_U       | -   |        | arr_139_loc_channel  | fifo | srl    | 0       |
+|   arr_140_loc_channel_U       | -   |        | arr_140_loc_channel  | fifo | srl    | 0       |
+|   arr_141_loc_channel_U       | -   |        | arr_141_loc_channel  | fifo | srl    | 0       |
+|   arr_142_loc_channel_U       | -   |        | arr_142_loc_channel  | fifo | srl    | 0       |
+|   arr_143_loc_channel_U       | -   |        | arr_143_loc_channel  | fifo | srl    | 0       |
+|   arr_144_loc_channel_U       | -   |        | arr_144_loc_channel  | fifo | srl    | 0       |
+|   arr_145_loc_channel_U       | -   |        | arr_145_loc_channel  | fifo | srl    | 0       |
+|   arr_146_loc_channel_U       | -   |        | arr_146_loc_channel  | fifo | srl    | 0       |
+|   arr_147_loc_channel_U       | -   |        | arr_147_loc_channel  | fifo | srl    | 0       |
+|   arr_148_loc_channel_U       | -   |        | arr_148_loc_channel  | fifo | srl    | 0       |
+|   arr_149_loc_channel_U       | -   |        | arr_149_loc_channel  | fifo | srl    | 0       |
+|   arr_150_loc_channel_U       | -   |        | arr_150_loc_channel  | fifo | srl    | 0       |
+|   arr_151_loc_channel_U       | -   |        | arr_151_loc_channel  | fifo | srl    | 0       |
+|   arr_152_loc_channel_U       | -   |        | arr_152_loc_channel  | fifo | srl    | 0       |
+|   arr_153_loc_channel_U       | -   |        | arr_153_loc_channel  | fifo | srl    | 0       |
+|   arr_154_loc_channel_U       | -   |        | arr_154_loc_channel  | fifo | srl    | 0       |
+|   arr_155_loc_channel_U       | -   |        | arr_155_loc_channel  | fifo | srl    | 0       |
+|   arr_156_loc_channel_U       | -   |        | arr_156_loc_channel  | fifo | srl    | 0       |
+|   arr_157_loc_channel_U       | -   |        | arr_157_loc_channel  | fifo | srl    | 0       |
+|   arr_158_loc_channel_U       | -   |        | arr_158_loc_channel  | fifo | srl    | 0       |
+|   arr_159_loc_channel_U       | -   |        | arr_159_loc_channel  | fifo | srl    | 0       |
+|   arr_160_loc_channel_U       | -   |        | arr_160_loc_channel  | fifo | srl    | 0       |
+|   arr_161_loc_channel_U       | -   |        | arr_161_loc_channel  | fifo | srl    | 0       |
+|   arr_162_loc_channel_U       | -   |        | arr_162_loc_channel  | fifo | srl    | 0       |
+|   arr_163_loc_channel_U       | -   |        | arr_163_loc_channel  | fifo | srl    | 0       |
+|   arr_164_loc_channel_U       | -   |        | arr_164_loc_channel  | fifo | srl    | 0       |
+|   arr_165_loc_channel_U       | -   |        | arr_165_loc_channel  | fifo | srl    | 0       |
+|   arr_166_loc_channel_U       | -   |        | arr_166_loc_channel  | fifo | srl    | 0       |
+|   arr_167_loc_channel_U       | -   |        | arr_167_loc_channel  | fifo | srl    | 0       |
+|   arr_168_loc_channel_U       | -   |        | arr_168_loc_channel  | fifo | srl    | 0       |
+|   arr_169_loc_channel_U       | -   |        | arr_169_loc_channel  | fifo | srl    | 0       |
+|   arr_170_loc_channel_U       | -   |        | arr_170_loc_channel  | fifo | srl    | 0       |
+|   arr_171_loc_channel_U       | -   |        | arr_171_loc_channel  | fifo | srl    | 0       |
+|   arr_172_loc_channel_U       | -   |        | arr_172_loc_channel  | fifo | srl    | 0       |
+|   arr_173_loc_channel_U       | -   |        | arr_173_loc_channel  | fifo | srl    | 0       |
+|   arr_174_loc_channel_U       | -   |        | arr_174_loc_channel  | fifo | srl    | 0       |
+|   arr_175_loc_channel_U       | -   |        | arr_175_loc_channel  | fifo | srl    | 0       |
+|   arr_176_loc_channel_U       | -   |        | arr_176_loc_channel  | fifo | srl    | 0       |
+|   arr_177_loc_channel_U       | -   |        | arr_177_loc_channel  | fifo | srl    | 0       |
+|   arr_178_loc_channel_U       | -   |        | arr_178_loc_channel  | fifo | srl    | 0       |
+|   arr_179_loc_channel_U       | -   |        | arr_179_loc_channel  | fifo | srl    | 0       |
+|   arr_180_loc_channel_U       | -   |        | arr_180_loc_channel  | fifo | srl    | 0       |
+|   arr_181_loc_channel_U       | -   |        | arr_181_loc_channel  | fifo | srl    | 0       |
+|   arr_182_loc_channel_U       | -   |        | arr_182_loc_channel  | fifo | srl    | 0       |
+|   arr_183_loc_channel_U       | -   |        | arr_183_loc_channel  | fifo | srl    | 0       |
+|   arr_184_loc_channel_U       | -   |        | arr_184_loc_channel  | fifo | srl    | 0       |
+|   arr_185_loc_channel_U       | -   |        | arr_185_loc_channel  | fifo | srl    | 0       |
+|   arr_186_loc_channel_U       | -   |        | arr_186_loc_channel  | fifo | srl    | 0       |
+|   arr_187_loc_channel_U       | -   |        | arr_187_loc_channel  | fifo | srl    | 0       |
+|   arr_188_loc_channel_U       | -   |        | arr_188_loc_channel  | fifo | srl    | 0       |
+|   arr_189_loc_channel_U       | -   |        | arr_189_loc_channel  | fifo | srl    | 0       |
+|   arr_190_loc_channel_U       | -   |        | arr_190_loc_channel  | fifo | srl    | 0       |
+|   arr_191_loc_channel_U       | -   |        | arr_191_loc_channel  | fifo | srl    | 0       |
+|   arr_192_loc_channel_U       | -   |        | arr_192_loc_channel  | fifo | srl    | 0       |
+|   arr_193_loc_channel_U       | -   |        | arr_193_loc_channel  | fifo | srl    | 0       |
+|   arr_194_loc_channel_U       | -   |        | arr_194_loc_channel  | fifo | srl    | 0       |
+|   arr_195_loc_channel_U       | -   |        | arr_195_loc_channel  | fifo | srl    | 0       |
+|   arr_196_loc_channel_U       | -   |        | arr_196_loc_channel  | fifo | srl    | 0       |
+|   arr_197_loc_channel_U       | -   |        | arr_197_loc_channel  | fifo | srl    | 0       |
+|   arr_198_loc_channel_U       | -   |        | arr_198_loc_channel  | fifo | srl    | 0       |
+|  + Loop_VITIS_LOOP_35_2_proc3 | 0   |        |                      |      |        |         |
+|    i_4_fu_1863_p2             | -   |        | i_4                  | add  | fabric | 0       |
+|  + Loop_VITIS_LOOP_68_5_proc  | 0   |        |                      |      |        |         |
+|    i_1_fu_3615_p2             | -   |        | i_1                  | add  | fabric | 0       |
+|  + Loop_VITIS_LOOP_90_8_proc  | 0   |        |                      |      |        |         |
+|    add_ln90_fu_884_p2         | -   |        | add_ln90             | add  | fabric | 0       |
++-------------------------------+-----+--------+----------------------+------+--------+---------+
 
 
 ================================================================
@@ -119,6 +417,14 @@
 ================================================================
 == Pragma Report
 ================================================================
+* Pragmas with Warnings
++----------+---------+-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Type     | Options | Location                                | Messages                                                                                                                                                                           |
++----------+---------+-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| dataflow |         | topk_sort/topk_sort.cpp:13 in topk_sort | Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region |
+|          |         |                                         | There are a total of 4 such instances of non-canonical statements in the dataflow region                                                                                           |
++----------+---------+-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 * Valid Pragma Syntax
 +-----------------+------------------------------------------+--------------------------------------------------+
 | Type            | Options                                  | Location                                         |
@@ -126,17 +432,17 @@
 | interface       | s_axilite port=return bundle=CONTROL_BUS | topk_sort/topk_sort.cpp:9 in topk_sort, return   |
 | interface       | axis port=istrm                          | topk_sort/topk_sort.cpp:10 in topk_sort, istrm   |
 | interface       | axis port=ostrm                          | topk_sort/topk_sort.cpp:11 in topk_sort, ostrm   |
-| array_partition | variable=arr complete dim=0              | topk_sort/topk_sort.cpp:16 in topk_sort, arr     |
-| array_partition | variable=post complete dim=0             | topk_sort/topk_sort.cpp:17 in topk_sort, post    |
-| array_partition | variable=reserve complete dim=0          | topk_sort/topk_sort.cpp:18 in topk_sort, reserve |
-| unroll          |                                          | topk_sort/topk_sort.cpp:23 in topk_sort          |
-| pipeline        | II=1                                     | topk_sort/topk_sort.cpp:34 in topk_sort          |
-| unroll          |                                          | topk_sort/topk_sort.cpp:41 in topk_sort          |
-| unroll          |                                          | topk_sort/topk_sort.cpp:60 in topk_sort          |
-| pipeline        | II=1                                     | topk_sort/topk_sort.cpp:67 in topk_sort          |
-| unroll          |                                          | topk_sort/topk_sort.cpp:69 in topk_sort          |
-| unroll          |                                          | topk_sort/topk_sort.cpp:80 in topk_sort          |
-| pipeline        | II=1                                     | topk_sort/topk_sort.cpp:89 in topk_sort          |
+| array_partition | variable=arr complete dim=0              | topk_sort/topk_sort.cpp:18 in topk_sort, arr     |
+| array_partition | variable=post complete dim=0             | topk_sort/topk_sort.cpp:19 in topk_sort, post    |
+| array_partition | variable=reserve complete dim=0          | topk_sort/topk_sort.cpp:20 in topk_sort, reserve |
+| unroll          |                                          | topk_sort/topk_sort.cpp:25 in topk_sort          |
+| pipeline        | II=1                                     | topk_sort/topk_sort.cpp:36 in topk_sort          |
+| unroll          |                                          | topk_sort/topk_sort.cpp:43 in topk_sort          |
+| unroll          |                                          | topk_sort/topk_sort.cpp:62 in topk_sort          |
+| pipeline        | II=1                                     | topk_sort/topk_sort.cpp:69 in topk_sort          |
+| unroll          |                                          | topk_sort/topk_sort.cpp:71 in topk_sort          |
+| unroll          |                                          | topk_sort/topk_sort.cpp:82 in topk_sort          |
+| pipeline        | II=1                                     | topk_sort/topk_sort.cpp:91 in topk_sort          |
 +-----------------+------------------------------------------+--------------------------------------------------+
 
 

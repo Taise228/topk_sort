@@ -15,29 +15,30 @@
 </UserAssignments>
 
 <PerformanceEstimates>
-<PipelineType>no</PipelineType>
+<PipelineType>dataflow</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>2.466</EstimatedClockPeriod>
+<EstimatedClockPeriod>5.283</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>1212</Best-caseLatency>
-<Average-caseLatency>1212</Average-caseLatency>
-<Worst-caseLatency>1212</Worst-caseLatency>
-<Best-caseRealTimeLatency>12.120 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>12.120 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>12.120 us</Worst-caseRealTimeLatency>
-<Interval-min>1213</Interval-min>
-<Interval-max>1213</Interval-max>
+<Best-caseLatency>1208</Best-caseLatency>
+<Average-caseLatency>1208</Average-caseLatency>
+<Worst-caseLatency>1208</Worst-caseLatency>
+<Best-caseRealTimeLatency>12.080 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>12.080 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>12.080 us</Worst-caseRealTimeLatency>
+<DataflowPipelineThroughput>1003</DataflowPipelineThroughput>
+<Interval-min>1003</Interval-min>
+<Interval-max>1003</Interval-max>
 </SummaryOfOverallLatency>
 </PerformanceEstimates>
 
 <AreaEstimates>
 <Resources>
 <BRAM_18K>0</BRAM_18K>
-<FF>12785</FF>
-<LUT>28257</LUT>
+<FF>52110</FF>
+<LUT>60979</LUT>
 <URAM>0</URAM>
 <DSP>0</DSP>
 </Resources>
@@ -284,42 +285,6 @@
 <CType>int</CType>
 </RtlPorts>
 <RtlPorts>
-<name>istrm_TVALID</name>
-<Object>istrm_V_last_V</Object>
-<Type>pointer</Type>
-<Scope></Scope>
-<IOProtocol>axis</IOProtocol>
-<IOConfig>register, both mode</IOConfig>
-<Dir>in</Dir>
-<Bits>1</Bits>
-<Attribute>control</Attribute>
-<CType>int</CType>
-</RtlPorts>
-<RtlPorts>
-<name>istrm_TREADY</name>
-<Object>istrm_V_last_V</Object>
-<Type>pointer</Type>
-<Scope></Scope>
-<IOProtocol>axis</IOProtocol>
-<IOConfig>register, both mode</IOConfig>
-<Dir>out</Dir>
-<Bits>1</Bits>
-<Attribute>control</Attribute>
-<CType>int</CType>
-</RtlPorts>
-<RtlPorts>
-<name>istrm_TLAST</name>
-<Object>istrm_V_last_V</Object>
-<Type>pointer</Type>
-<Scope></Scope>
-<IOProtocol>axis</IOProtocol>
-<IOConfig>register, both mode</IOConfig>
-<Dir>in</Dir>
-<Bits>1</Bits>
-<Attribute>data</Attribute>
-<CType>int</CType>
-</RtlPorts>
-<RtlPorts>
 <name>istrm_TKEEP</name>
 <Object>istrm_V_keep_V</Object>
 <Type>pointer</Type>
@@ -344,32 +309,20 @@
 <CType>int</CType>
 </RtlPorts>
 <RtlPorts>
-<name>ostrm_TDATA</name>
-<Object>ostrm_V_data_V</Object>
+<name>istrm_TLAST</name>
+<Object>istrm_V_last_V</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>axis</IOProtocol>
 <IOConfig>register, both mode</IOConfig>
-<Dir>out</Dir>
-<Bits>32</Bits>
+<Dir>in</Dir>
+<Bits>1</Bits>
 <Attribute>data</Attribute>
 <CType>int</CType>
 </RtlPorts>
 <RtlPorts>
-<name>ostrm_TVALID</name>
-<Object>ostrm_V_last_V</Object>
-<Type>pointer</Type>
-<Scope></Scope>
-<IOProtocol>axis</IOProtocol>
-<IOConfig>register, both mode</IOConfig>
-<Dir>out</Dir>
-<Bits>1</Bits>
-<Attribute>control</Attribute>
-<CType>int</CType>
-</RtlPorts>
-<RtlPorts>
-<name>ostrm_TREADY</name>
-<Object>ostrm_V_last_V</Object>
+<name>istrm_TVALID</name>
+<Object>istrm_V_last_V</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>axis</IOProtocol>
@@ -380,14 +333,26 @@
 <CType>int</CType>
 </RtlPorts>
 <RtlPorts>
-<name>ostrm_TLAST</name>
-<Object>ostrm_V_last_V</Object>
+<name>istrm_TREADY</name>
+<Object>istrm_V_last_V</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>axis</IOProtocol>
 <IOConfig>register, both mode</IOConfig>
 <Dir>out</Dir>
 <Bits>1</Bits>
+<Attribute>control</Attribute>
+<CType>int</CType>
+</RtlPorts>
+<RtlPorts>
+<name>ostrm_TDATA</name>
+<Object>ostrm_V_data_V</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>axis</IOProtocol>
+<IOConfig>register, both mode</IOConfig>
+<Dir>out</Dir>
+<Bits>32</Bits>
 <Attribute>data</Attribute>
 <CType>int</CType>
 </RtlPorts>
@@ -413,6 +378,42 @@
 <Dir>out</Dir>
 <Bits>4</Bits>
 <Attribute>data</Attribute>
+<CType>int</CType>
+</RtlPorts>
+<RtlPorts>
+<name>ostrm_TLAST</name>
+<Object>ostrm_V_last_V</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>axis</IOProtocol>
+<IOConfig>register, both mode</IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>data</Attribute>
+<CType>int</CType>
+</RtlPorts>
+<RtlPorts>
+<name>ostrm_TVALID</name>
+<Object>ostrm_V_last_V</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>axis</IOProtocol>
+<IOConfig>register, both mode</IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+<CType>int</CType>
+</RtlPorts>
+<RtlPorts>
+<name>ostrm_TREADY</name>
+<Object>ostrm_V_last_V</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>axis</IOProtocol>
+<IOConfig>register, both mode</IOConfig>
+<Dir>in</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
 <CType>int</CType>
 </RtlPorts>
 </InterfaceSummary>

@@ -10,6 +10,8 @@ void topk_sort(hls::stream<StreamPix> &istrm, hls::stream<StreamPix> &ostrm) {
     #pragma HLS INTERFACE axis port=istrm
     #pragma HLS INTERFACE axis port=ostrm
 
+    #pragma HLS DATAFLOW
+
     int arr[k];
     int post[k];
     int reserve[k];

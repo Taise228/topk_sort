@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="topk_sort" xd:componentRef="topk_sort" xd:initiationInterval="1213" xd:clockPeriod="10" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="topk_sort" xd:componentRef="topk_sort" xd:initiationInterval="1003" xd:clockPeriod="10" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
   <xd:controlReg xd:name="control" xd:interfaceRef="s_axi_CONTROL_BUS" xd:busTypeRef="axilite" xd:type="generic_axi_lite" xd:offset="0x0"/>
   <xd:arg xd:name="istrm" xd:originalName="istrm" xd:direction="in" xd:interfaceRef="istrm" xd:busTypeRef="axis" xd:dataWidth="32"/>
   <xd:arg xd:name="ostrm" xd:originalName="ostrm" xd:direction="out" xd:interfaceRef="ostrm" xd:busTypeRef="axis" xd:dataWidth="32"/>
-  <xd:latencyEstimates xd:best-case="1212" xd:worst-case="1212" xd:average-case="1212"/>
-  <xd:resourceEstimates xd:LUT="28257" xd:FF="12785" xd:BRAM="0" xd:DSP="0"/>
+  <xd:latencyEstimates xd:best-case="1208" xd:worst-case="1208" xd:average-case="1208"/>
+  <xd:resourceEstimates xd:LUT="60981" xd:FF="52110" xd:BRAM="0" xd:DSP="0"/>
 </xd:acceleratorMap>
