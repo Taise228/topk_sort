@@ -4,7 +4,7 @@
 == Synthesis Summary Report of 'topk_sort'
 ================================================================
 + General Information: 
-    * Date:           Sun Jul 21 01:25:31 2024
+    * Date:           Sun Jul 21 12:41:25 2024
     * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
     * Project:        topk_sort
     * Solution:       solution1 (Vivado IP Flow Target)
@@ -15,22 +15,18 @@
 + Performance & Resource Estimates: 
     
     PS: '+' for module; 'o' for loop; '*' for dataflow
-    +----------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----+------------+-------------+-----+
-    |                 Modules                | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |      |    |            |             |     |
-    |                 & Loops                | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined| BRAM | DSP|     FF     |     LUT     | URAM|
-    +----------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----+------------+-------------+-----+
-    |+ topk_sort                             |     -|  4.70|   115406|  1.154e+06|         -|   115407|     -|        no|     -|   -|  13040 (5%)|  11733 (10%)|    -|
-    | + topk_sort_Pipeline_VITIS_LOOP_20_1   |     -|  6.06|      102|  1.020e+03|         -|      102|     -|        no|     -|   -|     9 (~0%)|     51 (~0%)|    -|
-    |  o VITIS_LOOP_20_1                     |     -|  7.30|      100|  1.000e+03|         1|        1|   100|       yes|     -|   -|           -|            -|    -|
-    | + topk_sort_Pipeline_VITIS_LOOP_70_6   |     -|  6.06|      102|  1.020e+03|         -|      102|     -|        no|     -|   -|    43 (~0%)|    582 (~0%)|    -|
-    |  o VITIS_LOOP_70_6                     |     -|  7.30|      100|  1.000e+03|         2|        1|   100|       yes|     -|   -|           -|            -|    -|
-    | o VITIS_LOOP_30_2                      |     -|  7.30|   105000|  1.050e+06|       105|        -|  1000|        no|     -|   -|           -|            -|    -|
-    |  + topk_sort_Pipeline_VITIS_LOOP_36_3  |     -|  4.70|      102|  1.020e+03|         -|      102|     -|        no|     -|   -|     9 (~0%)|    3656 (3%)|    -|
-    |   o VITIS_LOOP_36_3                    |     -|  7.30|      100|  1.000e+03|         1|        1|   100|       yes|     -|   -|           -|            -|    -|
-    | o VITIS_LOOP_57_4                      |     -|  7.30|    10197|  1.020e+05|       103|        -|    99|        no|     -|   -|           -|            -|    -|
-    |  + topk_sort_Pipeline_VITIS_LOOP_58_5  |     -|  4.70|      101|  1.010e+03|         -|      101|     -|        no|     -|   -|    67 (~0%)|    3646 (3%)|    -|
-    |   o VITIS_LOOP_58_5                    |     -|  7.30|       99|    990.000|         1|        1|    99|       yes|     -|   -|           -|            -|    -|
-    +----------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----+------------+-------------+-----+
+    +---------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----+------------+-------------+-----+
+    |                Modules                | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |      |    |            |             |     |
+    |                & Loops                | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined| BRAM | DSP|     FF     |     LUT     | URAM|
+    +---------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----+------------+-------------+-----+
+    |+ topk_sort                            |     -|  4.83|     1212|  1.212e+04|         -|     1213|     -|        no|     -|   -|  12785 (5%)|  28257 (24%)|    -|
+    | + topk_sort_Pipeline_VITIS_LOOP_33_2  |     -|  5.43|     1002|  1.002e+04|         -|     1002|     -|        no|     -|   -|   6381 (2%)|   10229 (8%)|    -|
+    |  o VITIS_LOOP_33_2                    |     -|  7.30|     1000|  1.000e+04|         1|        1|  1000|       yes|     -|   -|           -|            -|    -|
+    | + topk_sort_Pipeline_VITIS_LOOP_66_5  |     -|  4.83|      101|  1.010e+03|         -|      101|     -|        no|     -|   -|   6314 (2%)|  17346 (14%)|    -|
+    |  o VITIS_LOOP_66_5                    |     -|  7.30|       99|    990.000|         1|        1|    99|       yes|     -|   -|           -|            -|    -|
+    | + topk_sort_Pipeline_VITIS_LOOP_88_8  |     -|  6.06|      102|  1.020e+03|         -|      102|     -|        no|     -|   -|    43 (~0%)|    582 (~0%)|    -|
+    |  o VITIS_LOOP_88_8                    |     -|  7.30|      100|  1.000e+03|         2|        1|   100|       yes|     -|   -|           -|            -|    -|
+    +---------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----+------------+-------------+-----+
 
 
 ================================================================
@@ -106,17 +102,12 @@
 | Name                                  | DSP | Pragma | Variable | Op  | Impl   | Latency |
 +---------------------------------------+-----+--------+----------+-----+--------+---------+
 | + topk_sort                           | 0   |        |          |     |        |         |
-|   i_3_fu_3040_p2                      | -   |        | i_3      | add | fabric | 0       |
-|   j_fu_4075_p2                        | -   |        | j        | add | fabric | 0       |
-|   add_ln57_fu_4085_p2                 | -   |        | add_ln57 | add | fabric | 0       |
-|  + topk_sort_Pipeline_VITIS_LOOP_20_1 | 0   |        |          |     |        |         |
-|    add_ln20_fu_1836_p2                | -   |        | add_ln20 | add | fabric | 0       |
-|  + topk_sort_Pipeline_VITIS_LOOP_36_3 | 0   |        |          |     |        |         |
-|    add_ln36_fu_648_p2                 | -   |        | add_ln36 | add | fabric | 0       |
-|  + topk_sort_Pipeline_VITIS_LOOP_58_5 | 0   |        |          |     |        |         |
-|    add_ln58_fu_3678_p2                | -   |        | add_ln58 | add | fabric | 0       |
-|  + topk_sort_Pipeline_VITIS_LOOP_70_6 | 0   |        |          |     |        |         |
-|    add_ln70_fu_884_p2                 | -   |        | add_ln70 | add | fabric | 0       |
+|  + topk_sort_Pipeline_VITIS_LOOP_33_2 | 0   |        |          |     |        |         |
+|    i_5_fu_3654_p2                     | -   |        | i_5      | add | fabric | 0       |
+|  + topk_sort_Pipeline_VITIS_LOOP_66_5 | 0   |        |          |     |        |         |
+|    i_3_fu_4506_p2                     | -   |        | i_3      | add | fabric | 0       |
+|  + topk_sort_Pipeline_VITIS_LOOP_88_8 | 0   |        |          |     |        |         |
+|    add_ln88_fu_884_p2                 | -   |        | add_ln88 | add | fabric | 0       |
 +---------------------------------------+-----+--------+----------+-----+--------+---------+
 
 
@@ -129,18 +120,23 @@
 == Pragma Report
 ================================================================
 * Valid Pragma Syntax
-+-----------------+------------------------------------------+------------------------------------------------+
-| Type            | Options                                  | Location                                       |
-+-----------------+------------------------------------------+------------------------------------------------+
-| interface       | s_axilite port=return bundle=CONTROL_BUS | topk_sort/topk_sort.cpp:9 in topk_sort, return |
-| interface       | axis port=istrm                          | topk_sort/topk_sort.cpp:10 in topk_sort, istrm |
-| interface       | axis port=ostrm                          | topk_sort/topk_sort.cpp:11 in topk_sort, ostrm |
-| array_partition | variable=arr complete dim=0              | topk_sort/topk_sort.cpp:15 in topk_sort, arr   |
-| array_partition | variable=post complete dim=0             | topk_sort/topk_sort.cpp:16 in topk_sort, post  |
-| pipeline        | II=1                                     | topk_sort/topk_sort.cpp:21 in topk_sort        |
-| pipeline        | II=1                                     | topk_sort/topk_sort.cpp:37 in topk_sort        |
-| pipeline        | II=1                                     | topk_sort/topk_sort.cpp:59 in topk_sort        |
-| pipeline        | II=1                                     | topk_sort/topk_sort.cpp:71 in topk_sort        |
-+-----------------+------------------------------------------+------------------------------------------------+
++-----------------+------------------------------------------+--------------------------------------------------+
+| Type            | Options                                  | Location                                         |
++-----------------+------------------------------------------+--------------------------------------------------+
+| interface       | s_axilite port=return bundle=CONTROL_BUS | topk_sort/topk_sort.cpp:9 in topk_sort, return   |
+| interface       | axis port=istrm                          | topk_sort/topk_sort.cpp:10 in topk_sort, istrm   |
+| interface       | axis port=ostrm                          | topk_sort/topk_sort.cpp:11 in topk_sort, ostrm   |
+| array_partition | variable=arr complete dim=0              | topk_sort/topk_sort.cpp:16 in topk_sort, arr     |
+| array_partition | variable=post complete dim=0             | topk_sort/topk_sort.cpp:17 in topk_sort, post    |
+| array_partition | variable=reserve complete dim=0          | topk_sort/topk_sort.cpp:18 in topk_sort, reserve |
+| unroll          |                                          | topk_sort/topk_sort.cpp:23 in topk_sort          |
+| pipeline        | II=1                                     | topk_sort/topk_sort.cpp:34 in topk_sort          |
+| unroll          |                                          | topk_sort/topk_sort.cpp:41 in topk_sort          |
+| unroll          |                                          | topk_sort/topk_sort.cpp:60 in topk_sort          |
+| pipeline        | II=1                                     | topk_sort/topk_sort.cpp:67 in topk_sort          |
+| unroll          |                                          | topk_sort/topk_sort.cpp:69 in topk_sort          |
+| unroll          |                                          | topk_sort/topk_sort.cpp:80 in topk_sort          |
+| pipeline        | II=1                                     | topk_sort/topk_sort.cpp:89 in topk_sort          |
++-----------------+------------------------------------------+--------------------------------------------------+
 
 

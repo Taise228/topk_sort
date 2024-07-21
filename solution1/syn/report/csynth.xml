@@ -15,56 +15,25 @@
         <PipelineType>no</PipelineType>
         <SummaryOfTimingAnalysis>
             <unit>ns</unit>
-            <EstimatedClockPeriod>2.598</EstimatedClockPeriod>
+            <EstimatedClockPeriod>2.466</EstimatedClockPeriod>
         </SummaryOfTimingAnalysis>
         <SummaryOfOverallLatency>
             <unit>clock cycles</unit>
-            <Best-caseLatency>105704</Best-caseLatency>
-            <Average-caseLatency>undef</Average-caseLatency>
-            <Worst-caseLatency>115406</Worst-caseLatency>
-            <Best-caseRealTimeLatency>1.057 ms</Best-caseRealTimeLatency>
-            <Average-caseRealTimeLatency>undef</Average-caseRealTimeLatency>
-            <Worst-caseRealTimeLatency>1.154 ms</Worst-caseRealTimeLatency>
-            <Interval-min>105705</Interval-min>
-            <Interval-max>115407</Interval-max>
+            <Best-caseLatency>1212</Best-caseLatency>
+            <Average-caseLatency>1212</Average-caseLatency>
+            <Worst-caseLatency>1212</Worst-caseLatency>
+            <Best-caseRealTimeLatency>12.120 us</Best-caseRealTimeLatency>
+            <Average-caseRealTimeLatency>12.120 us</Average-caseRealTimeLatency>
+            <Worst-caseRealTimeLatency>12.120 us</Worst-caseRealTimeLatency>
+            <Interval-min>1213</Interval-min>
+            <Interval-max>1213</Interval-max>
         </SummaryOfOverallLatency>
-        <SummaryOfLoopLatency>
-            <VITIS_LOOP_30_2>
-                <TripCount>1000</TripCount>
-                <Latency>105000</Latency>
-                <AbsoluteTimeLatency>1050000</AbsoluteTimeLatency>
-                <IterationLatency>105</IterationLatency>
-                <InstanceList/>
-            </VITIS_LOOP_30_2>
-            <VITIS_LOOP_57_4>
-                <TripCount>99</TripCount>
-                <Latency>
-                    <range>
-                        <min>495</min>
-                        <max>10197</max>
-                    </range>
-                </Latency>
-                <AbsoluteTimeLatency>
-                    <range>
-                        <min>4950</min>
-                        <max>101970</max>
-                    </range>
-                </AbsoluteTimeLatency>
-                <IterationLatency>
-                    <range>
-                        <min>5</min>
-                        <max>103</max>
-                    </range>
-                </IterationLatency>
-                <InstanceList/>
-            </VITIS_LOOP_57_4>
-        </SummaryOfLoopLatency>
     </PerformanceEstimates>
     <AreaEstimates>
         <Resources>
             <BRAM_18K>0</BRAM_18K>
-            <FF>13040</FF>
-            <LUT>11733</LUT>
+            <FF>12785</FF>
+            <LUT>28257</LUT>
             <URAM>0</URAM>
             <DSP>0</DSP>
         </Resources>
@@ -447,80 +416,72 @@
             <ModuleName>topk_sort</ModuleName>
             <InstancesList>
                 <Instance>
-                    <InstName>grp_topk_sort_Pipeline_VITIS_LOOP_20_1_fu_1700</InstName>
-                    <ModuleName>topk_sort_Pipeline_VITIS_LOOP_20_1</ModuleName>
+                    <InstName>grp_topk_sort_Pipeline_VITIS_LOOP_33_2_fu_1242</InstName>
+                    <ModuleName>topk_sort_Pipeline_VITIS_LOOP_33_2</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>1700</ID>
-                    <BindInstances>add_ln20_fu_1836_p2</BindInstances>
+                    <ID>1242</ID>
+                    <BindInstances>i_5_fu_3654_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_topk_sort_Pipeline_VITIS_LOOP_36_3_fu_1904</InstName>
-                    <ModuleName>topk_sort_Pipeline_VITIS_LOOP_36_3</ModuleName>
+                    <InstName>grp_topk_sort_Pipeline_VITIS_LOOP_66_5_fu_1453</InstName>
+                    <ModuleName>topk_sort_Pipeline_VITIS_LOOP_66_5</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>1904</ID>
-                    <BindInstances>add_ln36_fu_648_p2</BindInstances>
+                    <ID>1453</ID>
+                    <BindInstances>i_3_fu_4506_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_topk_sort_Pipeline_VITIS_LOOP_58_5_fu_2109</InstName>
-                    <ModuleName>topk_sort_Pipeline_VITIS_LOOP_58_5</ModuleName>
+                    <InstName>grp_topk_sort_Pipeline_VITIS_LOOP_88_8_fu_1754</InstName>
+                    <ModuleName>topk_sort_Pipeline_VITIS_LOOP_88_8</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>2109</ID>
-                    <BindInstances>add_ln58_fu_3678_p2</BindInstances>
-                </Instance>
-                <Instance>
-                    <InstName>grp_topk_sort_Pipeline_VITIS_LOOP_70_6_fu_2314</InstName>
-                    <ModuleName>topk_sort_Pipeline_VITIS_LOOP_70_6</ModuleName>
-                    <IsCompInst>true</IsCompInst>
-                    <ID>2314</ID>
-                    <BindInstances>add_ln70_fu_884_p2</BindInstances>
+                    <ID>1754</ID>
+                    <BindInstances>add_ln88_fu_884_p2</BindInstances>
                 </Instance>
             </InstancesList>
-            <BindInstances>i_3_fu_3040_p2 j_fu_4075_p2 add_ln57_fu_4085_p2</BindInstances>
         </TopModule>
     </RTLDesignHierarchy>
     <ModuleInformation>
         <Module>
-            <Name>topk_sort_Pipeline_VITIS_LOOP_20_1</Name>
+            <Name>topk_sort_Pipeline_VITIS_LOOP_33_2</Name>
             <Loops>
-                <VITIS_LOOP_20_1/>
+                <VITIS_LOOP_33_2/>
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
                     <TargetClockPeriod>10.00</TargetClockPeriod>
                     <ClockUncertainty>2.70</ClockUncertainty>
-                    <EstimatedClockPeriod>1.244</EstimatedClockPeriod>
+                    <EstimatedClockPeriod>1.867</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
-                    <Best-caseLatency>102</Best-caseLatency>
-                    <Average-caseLatency>102</Average-caseLatency>
-                    <Worst-caseLatency>102</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>1.020 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>1.020 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>1.020 us</Worst-caseRealTimeLatency>
-                    <PipelineInitiationInterval>102</PipelineInitiationInterval>
+                    <Best-caseLatency>1002</Best-caseLatency>
+                    <Average-caseLatency>1002</Average-caseLatency>
+                    <Worst-caseLatency>1002</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>10.020 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>10.020 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>10.020 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>1002</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
-                    <VITIS_LOOP_20_1>
-                        <Name>VITIS_LOOP_20_1</Name>
-                        <TripCount>100</TripCount>
-                        <Latency>100</Latency>
-                        <AbsoluteTimeLatency>1.000 us</AbsoluteTimeLatency>
+                    <VITIS_LOOP_33_2>
+                        <Name>VITIS_LOOP_33_2</Name>
+                        <TripCount>1000</TripCount>
+                        <Latency>1000</Latency>
+                        <AbsoluteTimeLatency>10.000 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>1</PipelineDepth>
                         <PipelineType>yes</PipelineType>
                         <InstanceList/>
-                    </VITIS_LOOP_20_1>
+                    </VITIS_LOOP_33_2>
                 </SummaryOfLoopLatency>
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <FF>9</FF>
+                    <FF>6381</FF>
                     <AVAIL_FF>234240</AVAIL_FF>
-                    <UTIL_FF>~0</UTIL_FF>
-                    <LUT>51</LUT>
+                    <UTIL_FF>2</UTIL_FF>
+                    <LUT>10229</LUT>
                     <AVAIL_LUT>117120</AVAIL_LUT>
-                    <UTIL_LUT>~0</UTIL_LUT>
+                    <UTIL_LUT>8</UTIL_LUT>
                     <BRAM_18K>0</BRAM_18K>
                     <AVAIL_BRAM>288</AVAIL_BRAM>
                     <UTIL_BRAM>0</UTIL_BRAM>
@@ -533,113 +494,51 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_20_1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln20_fu_1836_p2" SOURCE="topk_sort/topk_sort.cpp:20" URAM="0" VARIABLE="add_ln20"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_33_2" OPTYPE="add" PRAGMA="" RTLNAME="i_5_fu_3654_p2" SOURCE="topk_sort/topk_sort.cpp:33" URAM="0" VARIABLE="i_5"/>
             </BindNodes>
         </Module>
         <Module>
-            <Name>topk_sort_Pipeline_VITIS_LOOP_36_3</Name>
+            <Name>topk_sort_Pipeline_VITIS_LOOP_66_5</Name>
             <Loops>
-                <VITIS_LOOP_36_3/>
+                <VITIS_LOOP_66_5/>
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
                     <TargetClockPeriod>10.00</TargetClockPeriod>
                     <ClockUncertainty>2.70</ClockUncertainty>
-                    <EstimatedClockPeriod>2.598</EstimatedClockPeriod>
+                    <EstimatedClockPeriod>2.466</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
-                    <Best-caseLatency>102</Best-caseLatency>
-                    <Average-caseLatency>102</Average-caseLatency>
-                    <Worst-caseLatency>102</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>1.020 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>1.020 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>1.020 us</Worst-caseRealTimeLatency>
-                    <PipelineInitiationInterval>102</PipelineInitiationInterval>
-                    <PipelineType>no</PipelineType>
-                </SummaryOfOverallLatency>
-                <SummaryOfLoopLatency>
-                    <VITIS_LOOP_36_3>
-                        <Name>VITIS_LOOP_36_3</Name>
-                        <TripCount>100</TripCount>
-                        <Latency>100</Latency>
-                        <AbsoluteTimeLatency>1.000 us</AbsoluteTimeLatency>
-                        <PipelineII>1</PipelineII>
-                        <PipelineDepth>1</PipelineDepth>
-                        <PipelineType>yes</PipelineType>
-                        <InstanceList/>
-                    </VITIS_LOOP_36_3>
-                </SummaryOfLoopLatency>
-            </PerformanceEstimates>
-            <AreaEstimates>
-                <Resources>
-                    <FF>9</FF>
-                    <AVAIL_FF>234240</AVAIL_FF>
-                    <UTIL_FF>~0</UTIL_FF>
-                    <LUT>3656</LUT>
-                    <AVAIL_LUT>117120</AVAIL_LUT>
-                    <UTIL_LUT>3</UTIL_LUT>
-                    <BRAM_18K>0</BRAM_18K>
-                    <AVAIL_BRAM>288</AVAIL_BRAM>
-                    <UTIL_BRAM>0</UTIL_BRAM>
-                    <DSP>0</DSP>
-                    <AVAIL_DSP>1248</AVAIL_DSP>
-                    <UTIL_DSP>0</UTIL_DSP>
-                    <URAM>0</URAM>
-                    <AVAIL_URAM>64</AVAIL_URAM>
-                    <UTIL_URAM>0</UTIL_URAM>
-                </Resources>
-            </AreaEstimates>
-            <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_36_3" OPTYPE="add" PRAGMA="" RTLNAME="add_ln36_fu_648_p2" SOURCE="topk_sort/topk_sort.cpp:36" URAM="0" VARIABLE="add_ln36"/>
-            </BindNodes>
-        </Module>
-        <Module>
-            <Name>topk_sort_Pipeline_VITIS_LOOP_58_5</Name>
-            <Loops>
-                <VITIS_LOOP_58_5/>
-            </Loops>
-            <PerformanceEstimates>
-                <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>10.00</TargetClockPeriod>
-                    <ClockUncertainty>2.70</ClockUncertainty>
-                    <EstimatedClockPeriod>2.598</EstimatedClockPeriod>
-                </SummaryOfTimingAnalysis>
-                <SummaryOfOverallLatency>
-                    <Best-caseLatency>3</Best-caseLatency>
-                    <Average-caseLatency>undef</Average-caseLatency>
+                    <Best-caseLatency>101</Best-caseLatency>
+                    <Average-caseLatency>101</Average-caseLatency>
                     <Worst-caseLatency>101</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>30.000 ns</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>undef</Average-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>1.010 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>1.010 us</Average-caseRealTimeLatency>
                     <Worst-caseRealTimeLatency>1.010 us</Worst-caseRealTimeLatency>
-                    <PipelineInitiationInterval>3 ~ 101</PipelineInitiationInterval>
+                    <PipelineInitiationInterval>101</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
-                    <VITIS_LOOP_58_5>
-                        <Name>VITIS_LOOP_58_5</Name>
-                        <TripCount>
-                            <range>
-                                <min>1</min>
-                                <max>99</max>
-                            </range>
-                        </TripCount>
-                        <Latency>1 ~ 99</Latency>
-                        <AbsoluteTimeLatency>10.000 ns ~ 0.990 us</AbsoluteTimeLatency>
+                    <VITIS_LOOP_66_5>
+                        <Name>VITIS_LOOP_66_5</Name>
+                        <TripCount>99</TripCount>
+                        <Latency>99</Latency>
+                        <AbsoluteTimeLatency>0.990 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>1</PipelineDepth>
                         <PipelineType>yes</PipelineType>
                         <InstanceList/>
-                    </VITIS_LOOP_58_5>
+                    </VITIS_LOOP_66_5>
                 </SummaryOfLoopLatency>
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <FF>67</FF>
+                    <FF>6314</FF>
                     <AVAIL_FF>234240</AVAIL_FF>
-                    <UTIL_FF>~0</UTIL_FF>
-                    <LUT>3646</LUT>
+                    <UTIL_FF>2</UTIL_FF>
+                    <LUT>17346</LUT>
                     <AVAIL_LUT>117120</AVAIL_LUT>
-                    <UTIL_LUT>3</UTIL_LUT>
+                    <UTIL_LUT>14</UTIL_LUT>
                     <BRAM_18K>0</BRAM_18K>
                     <AVAIL_BRAM>288</AVAIL_BRAM>
                     <UTIL_BRAM>0</UTIL_BRAM>
@@ -652,13 +551,13 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_58_5" OPTYPE="add" PRAGMA="" RTLNAME="add_ln58_fu_3678_p2" SOURCE="topk_sort/topk_sort.cpp:58" URAM="0" VARIABLE="add_ln58"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_66_5" OPTYPE="add" PRAGMA="" RTLNAME="i_3_fu_4506_p2" SOURCE="" URAM="0" VARIABLE="i_3"/>
             </BindNodes>
         </Module>
         <Module>
-            <Name>topk_sort_Pipeline_VITIS_LOOP_70_6</Name>
+            <Name>topk_sort_Pipeline_VITIS_LOOP_88_8</Name>
             <Loops>
-                <VITIS_LOOP_70_6/>
+                <VITIS_LOOP_88_8/>
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
@@ -677,8 +576,8 @@
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
-                    <VITIS_LOOP_70_6>
-                        <Name>VITIS_LOOP_70_6</Name>
+                    <VITIS_LOOP_88_8>
+                        <Name>VITIS_LOOP_88_8</Name>
                         <TripCount>100</TripCount>
                         <Latency>100</Latency>
                         <AbsoluteTimeLatency>1.000 us</AbsoluteTimeLatency>
@@ -686,7 +585,7 @@
                         <PipelineDepth>2</PipelineDepth>
                         <PipelineType>yes</PipelineType>
                         <InstanceList/>
-                    </VITIS_LOOP_70_6>
+                    </VITIS_LOOP_88_8>
                 </SummaryOfLoopLatency>
             </PerformanceEstimates>
             <AreaEstimates>
@@ -709,74 +608,39 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_70_6" OPTYPE="add" PRAGMA="" RTLNAME="add_ln70_fu_884_p2" SOURCE="topk_sort/topk_sort.cpp:70" URAM="0" VARIABLE="add_ln70"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_88_8" OPTYPE="add" PRAGMA="" RTLNAME="add_ln88_fu_884_p2" SOURCE="topk_sort/topk_sort.cpp:88" URAM="0" VARIABLE="add_ln88"/>
             </BindNodes>
         </Module>
         <Module>
             <Name>topk_sort</Name>
-            <Loops>
-                <VITIS_LOOP_30_2/>
-                <VITIS_LOOP_57_4/>
-            </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
                     <TargetClockPeriod>10.00</TargetClockPeriod>
                     <ClockUncertainty>2.70</ClockUncertainty>
-                    <EstimatedClockPeriod>2.598</EstimatedClockPeriod>
+                    <EstimatedClockPeriod>2.466</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
-                    <Best-caseLatency>105704</Best-caseLatency>
-                    <Average-caseLatency>undef</Average-caseLatency>
-                    <Worst-caseLatency>115406</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>1.057 ms</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>undef</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>1.154 ms</Worst-caseRealTimeLatency>
-                    <PipelineInitiationInterval>105705 ~ 115407</PipelineInitiationInterval>
+                    <Best-caseLatency>1212</Best-caseLatency>
+                    <Average-caseLatency>1212</Average-caseLatency>
+                    <Worst-caseLatency>1212</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>12.120 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>12.120 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>12.120 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>1213</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
-                <SummaryOfLoopLatency>
-                    <VITIS_LOOP_30_2>
-                        <Name>VITIS_LOOP_30_2</Name>
-                        <TripCount>1000</TripCount>
-                        <Latency>105000</Latency>
-                        <AbsoluteTimeLatency>1.050 ms</AbsoluteTimeLatency>
-                        <IterationLatency>105</IterationLatency>
-                        <PipelineDepth>105</PipelineDepth>
-                        <PipelineType>no</PipelineType>
-                        <InstanceList>
-                            <Instance>grp_topk_sort_Pipeline_VITIS_LOOP_36_3_fu_1904</Instance>
-                        </InstanceList>
-                    </VITIS_LOOP_30_2>
-                    <VITIS_LOOP_57_4>
-                        <Name>VITIS_LOOP_57_4</Name>
-                        <TripCount>99</TripCount>
-                        <Latency>495 ~ 10197</Latency>
-                        <AbsoluteTimeLatency>4.950 us ~ 0.102 ms</AbsoluteTimeLatency>
-                        <IterationLatency>
-                            <range>
-                                <min>5</min>
-                                <max>103</max>
-                            </range>
-                        </IterationLatency>
-                        <PipelineDepth>5 ~ 103</PipelineDepth>
-                        <PipelineType>no</PipelineType>
-                        <InstanceList>
-                            <Instance>grp_topk_sort_Pipeline_VITIS_LOOP_58_5_fu_2109</Instance>
-                        </InstanceList>
-                    </VITIS_LOOP_57_4>
-                </SummaryOfLoopLatency>
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
                     <BRAM_18K>0</BRAM_18K>
                     <AVAIL_BRAM>288</AVAIL_BRAM>
                     <UTIL_BRAM>0</UTIL_BRAM>
-                    <FF>13040</FF>
+                    <FF>12785</FF>
                     <AVAIL_FF>234240</AVAIL_FF>
                     <UTIL_FF>5</UTIL_FF>
-                    <LUT>11733</LUT>
+                    <LUT>28257</LUT>
                     <AVAIL_LUT>117120</AVAIL_LUT>
-                    <UTIL_LUT>10</UTIL_LUT>
+                    <UTIL_LUT>24</UTIL_LUT>
                     <URAM>0</URAM>
                     <AVAIL_URAM>64</AVAIL_URAM>
                     <UTIL_URAM>0</UTIL_URAM>
@@ -785,11 +649,6 @@
                     <UTIL_DSP>0</UTIL_DSP>
                 </Resources>
             </AreaEstimates>
-            <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_30_2" OPTYPE="add" PRAGMA="" RTLNAME="i_3_fu_3040_p2" SOURCE="topk_sort/topk_sort.cpp:30" URAM="0" VARIABLE="i_3"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_57_4" OPTYPE="add" PRAGMA="" RTLNAME="j_fu_4075_p2" SOURCE="topk_sort/topk_sort.cpp:58" URAM="0" VARIABLE="j"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_57_4" OPTYPE="add" PRAGMA="" RTLNAME="add_ln57_fu_4085_p2" SOURCE="topk_sort/topk_sort.cpp:57" URAM="0" VARIABLE="add_ln57"/>
-            </BindNodes>
         </Module>
     </ModuleInformation>
     <FIFOInformation/>
@@ -1019,12 +878,17 @@
         <Pragma type="interface" location="topk_sort/topk_sort.cpp:9" status="valid" parentFunction="topk_sort" variable="return" isDirective="0" options="s_axilite port=return bundle=CONTROL_BUS"/>
         <Pragma type="interface" location="topk_sort/topk_sort.cpp:10" status="valid" parentFunction="topk_sort" variable="istrm" isDirective="0" options="axis port=istrm"/>
         <Pragma type="interface" location="topk_sort/topk_sort.cpp:11" status="valid" parentFunction="topk_sort" variable="ostrm" isDirective="0" options="axis port=ostrm"/>
-        <Pragma type="array_partition" location="topk_sort/topk_sort.cpp:15" status="valid" parentFunction="topk_sort" variable="arr" isDirective="0" options="variable=arr complete dim=0"/>
-        <Pragma type="array_partition" location="topk_sort/topk_sort.cpp:16" status="valid" parentFunction="topk_sort" variable="post" isDirective="0" options="variable=post complete dim=0"/>
-        <Pragma type="pipeline" location="topk_sort/topk_sort.cpp:21" status="valid" parentFunction="topk_sort" variable="" isDirective="0" options="II=1"/>
-        <Pragma type="pipeline" location="topk_sort/topk_sort.cpp:37" status="valid" parentFunction="topk_sort" variable="" isDirective="0" options="II=1"/>
-        <Pragma type="pipeline" location="topk_sort/topk_sort.cpp:59" status="valid" parentFunction="topk_sort" variable="" isDirective="0" options="II=1"/>
-        <Pragma type="pipeline" location="topk_sort/topk_sort.cpp:71" status="valid" parentFunction="topk_sort" variable="" isDirective="0" options="II=1"/>
+        <Pragma type="array_partition" location="topk_sort/topk_sort.cpp:16" status="valid" parentFunction="topk_sort" variable="arr" isDirective="0" options="variable=arr complete dim=0"/>
+        <Pragma type="array_partition" location="topk_sort/topk_sort.cpp:17" status="valid" parentFunction="topk_sort" variable="post" isDirective="0" options="variable=post complete dim=0"/>
+        <Pragma type="array_partition" location="topk_sort/topk_sort.cpp:18" status="valid" parentFunction="topk_sort" variable="reserve" isDirective="0" options="variable=reserve complete dim=0"/>
+        <Pragma type="unroll" location="topk_sort/topk_sort.cpp:23" status="valid" parentFunction="topk_sort" variable="" isDirective="0" options=""/>
+        <Pragma type="pipeline" location="topk_sort/topk_sort.cpp:34" status="valid" parentFunction="topk_sort" variable="" isDirective="0" options="II=1"/>
+        <Pragma type="unroll" location="topk_sort/topk_sort.cpp:41" status="valid" parentFunction="topk_sort" variable="" isDirective="0" options=""/>
+        <Pragma type="unroll" location="topk_sort/topk_sort.cpp:60" status="valid" parentFunction="topk_sort" variable="" isDirective="0" options=""/>
+        <Pragma type="pipeline" location="topk_sort/topk_sort.cpp:67" status="valid" parentFunction="topk_sort" variable="" isDirective="0" options="II=1"/>
+        <Pragma type="unroll" location="topk_sort/topk_sort.cpp:69" status="valid" parentFunction="topk_sort" variable="" isDirective="0" options=""/>
+        <Pragma type="unroll" location="topk_sort/topk_sort.cpp:80" status="valid" parentFunction="topk_sort" variable="" isDirective="0" options=""/>
+        <Pragma type="pipeline" location="topk_sort/topk_sort.cpp:89" status="valid" parentFunction="topk_sort" variable="" isDirective="0" options="II=1"/>
     </PragmaReport>
 </profile>
 
